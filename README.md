@@ -16,8 +16,12 @@ python3 -m http.server
 The best way to make this project work properly is to use it locally. This is because the process execution logs can be voluminous. The web page will load the process tree located in the `src/flare.json` file. If your internet connection is slow, it'll not be practical to upload that JSON file to a remote server and then reload the web page and wait for a while until that JSON file is loaded and the web page is rendered.
 
 # Example
-When you access the web page delivered through the web service, you'll see the parent process tree only. You can expand any branch and you cal also search for any indicator that was seen in the process details or their context. Using the search will make it expand all the parent nodes of the searched items and it will make that path colored in red:
+When you access the web page delivered through the web service, you'll see the parent process tree only. You can expand any branch and you cal also search for any indicator that was seen in the process details or their context. Using the search will make it expand all the parent nodes of the searched items and it will make that path colored in red.
+This was a test performed in my sandbox:
 <img src="https://github.com/mohamedaymenkarmous/EDR-Process-Explorer/blob/main/example.png">
+The data being generated was modified and saved in this file [src/flare.json](src/flare.json).
+
+This is just an example of 1 single process tree. But, in practice when you extract the process logs from a host between two different dates, you'll find several independant processes that you can include separately under the root node since the format of the [src/flare.json](src/flare.json) file should be in JSON format based on a JSON object (the parent structure should not be a list of objects). This is why, I adopted the structure of a parent "Independant process" that is the parent of multiple independant processes (1, 2, 3, etc).
 
 # Features
 Following are the features that are implemented or in the roadmap of the implementation:
