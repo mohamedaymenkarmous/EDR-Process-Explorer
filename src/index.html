@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<style>
+    html,body {
+        width:100%;
+        height:100%;
+    }
+    .node {
+        cursor: pointer;
+    }
+
+    .node circle {
+        fill: #fff;
+        stroke: steelblue;
+        stroke-width: 1.5px;
+    }
+
+    .found {
+        fill: #ff4136;
+        stroke: #ff4136;
+    }
+    .node text {
+        font: 10px sans-serif;
+    }
+
+    .link {
+        fill: none;
+        stroke: #ccc;
+        stroke-width: 1.5px;
+    }
+    /*Just to ensure the select2 box is "glued" to the top*/
+    .search {
+      width: 100%;
+      height:3%;
+    }
+    .details {
+      border: black solid 1px;
+      overflow: scroll;
+      height: 17%;
+      width: 100%;
+      font-size: 13px;
+    }
+    ul,p{
+      margin:0px!important;
+      font-size: 12px!important;
+    }
+    body .select2.narrow {
+    width: 200px;
+    }
+    .select2-selection__rendered{
+    display: none!important;
+    }
+
+/*body .search .select2-selection--single {
+    height: 100%;
+}
+body .select2-container.search .select2-selection--single .select2-selection__rendered {
+    word-wrap: break-word;
+    text-overflow: inherit;
+    white-space: normal;
+}*/
+</style>
+<!--
+This is the old version of Select2 that is limited
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/select2/3.5.0/select2.min.css"></link>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/select2/3.5.0/select2.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.min.js"></script>
+-->
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css"></link>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.full.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.min.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+
+
+<!-- This will be attached to select2, only static element on the page -->
+<div id="search"></div>
+<!--<button id="Reset">RESET</button>-->
+<div class="details"><p>Process details: None</p><p>Context:None</p></div>
+
+
+<!-- Main -->
+<script type="text/javascript">
+
+/*function recursive_largest_children_parent(obj){
+    console.log(obj);
+        console.log(obj.parent);
+        console.log(obj.children);
+        console.log(obj.name);
+        console.log(obj.details);
+    if(obj.parent){
+        console.log(obj.parent.children.length);
+        console.log(recursive_largest_children_parent(obj.parent));
+        return Math.max(obj.parent.children.length,recursive_largest_children_parent(obj.parent));
+    }else if(obj.children){
+      return obj.children.length;
+    }else return 1;
+
+}*/
+
+    //basically a way to get the path to an object
+    function searchTree(obj,search,path){
+        //console.log(search);
+        if(obj.details === search || obj.details === search){ //if search is found return, add the object to the path and return it
+            //console.log(obj);
+            //console.log(recursive_largest_children_parent(obj));
+            path.push(obj);
+            return path;
+        }
+        else if(obj.children || obj._children){ //if children are collapsed d3 object will have them instantiated as _children
+            var children = (obj.children) ? obj.children : obj._children;
+            for(var i=0;i<children.length;i++){
+                path.push(obj);// we assume this path is the right one
+                var found = searchTree(children[i],search,path);
+                if(found){// we were right, this should return the bubbled-up path from the first if statement
+                    return found;
+                }
+                else{//we were wrong, remove this parent from the path and continue iterating
+                    path.pop();
+                }
+            }
+        }
+        else{//not the right object, return false so it will continue to iterate in the loop
+            return false;
+        }
+    }
+
+    function extract_select2_data(node,leaves,index){
+        if (node.children){
+            leaves.push({id:++index,text:node.details,context:node.context});
+            for(var i = 0;i<node.children.length;i++){
+                index = extract_select2_data(node.children[i],leaves,index)[0];
+            }
+        }
+        else {
+        }
+        return [index,leaves];
+    }
+
+    var div = d3.select(".details");
+    /*var div = d3.select("body")
+        .append("div") // declare the tooltip div
+        .attr("class", "tooltip")
+        .style("opacity", 0)
+        .style("height", "150px");*/
+
+    var height_limit=750;
+    var margin = {top: 20, right: 120, bottom: 20, left: 120},
+        width = '100%', //1360 - margin.right - margin.left,
+        height = '80%', //height_limit - margin.top - margin.bottom,
+        height_ref=100;
+
+    var i = 0,
+        duration = 750,
+        root,
+        select2_data;
+
+    var diameter = 960;
+
+    var tree = d3.layout.tree()
+        .size([height, width]);
+
+    var diagonal = d3.svg.diagonal()
+        .projection(function(d) { return [d.y, d.x]; });
+
+    var vzoom=d3.behavior.zoom().translate([0, 0]).scale(1).scaleExtent([0.1, 8]);
+    var t,s;
+
+    var svg = d3.select("body").append("svg")
+        //.attr("width", width + margin.right + margin.left)
+        //.attr("height", height + margin.top + margin.bottom)
+        .attr("width", width)
+        .attr("height", height)
+        .call(vzoom.on("zoom",zoom))
+        .append("g")
+        .attr("transform", "translate(0,0)");
+        //.attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+
+    /*
+    It's a little bit difficult to control the reset zoom button
+    $("#Reset").click(() => {
+        console.log(d3.zoomIdentity);
+        svg.attr("transform", "translate(50,50)scale(2)");
+                svg.transition().each(function(){
+            this.__chart__={x:50,y:50,k:50}; //or you can pick those values using attr
+         });
+      //vzoom.transform(svg, d3.zoomIdentity);
+    });*/
+
+    //recursively collapse children
+    function collapse(d) {
+        if (d.children) {
+            d._children = d.children;
+            d._children.forEach(collapse);
+            d.children = null;
+        }
+    }
+
+    // Toggle children on click.
+    function click(d) {
+        if (d.children) {
+            d._children = d.children;
+            d.children = null;
+            height=height_ref-(20*d._children.length);
+            height_ref=height_ref-(20*d._children.length);
+            if(height_ref<height_limit){
+                height=height_limit;
+            }else{
+                height=height_ref;
+            }
+            tree =d3.layout.tree().size([height, width]);
+        }
+        else{
+            d.children = d._children;
+            d._children = null;
+            height=height_ref+(20*d.children.length);
+            height_ref=height_ref+(20*d.children.length);
+            if(height_ref<height_limit){
+                height=height_limit;
+            }else{
+                height=height_ref;
+            }
+            tree =d3.layout.tree().size([height, width]);
+        }
+        update(d);
+    }
+
+    function openPaths(paths){
+        for(var i =0;i<paths.length;i++){
+            if(paths[i].id !== "1"){//i.e. not root
+                paths[i].class = 'found';
+                if(paths[i]._children){ //if children are hidden: open them, otherwise: don't do anything
+                    paths[i].children = paths[i]._children;
+                    paths[i]._children = null;
+                }
+                update(paths[i]);
+            }
+        }
+    }
+
+    d3.json("flare.json", function(error,values){
+        root = values;
+        height=20*values.children.length;
+        height_ref=20*values.children.length;
+        if(height_ref<height_limit){
+            height=height_limit;
+        }else{
+            height=height_ref;
+        }
+        tree =d3.layout.tree().size([height, width]);
+        select2_data = extract_select2_data(values,[],0)[1];
+        root.x0 = height / 2;
+        root.y0 = 0;
+        root.children.forEach(collapse);
+        update(root);
+        //init search box
+        $("#search").select2({
+            data: select2_data,
+            closeOnSelect: true,
+            placeholder: "Select a state",
+            containerCssClass: "search",
+              escapeMarkup: function(markup) {
+                return markup;
+              },
+              templateResult: function(data) {
+                return data.text;
+              },
+              templateSelection: function(data) {
+                return data.text;
+              },
+              matcher: function(params, data) {
+                // If there are no search terms, return all of the data
+                if ($.trim(params.term) === '') {
+                  return data;
+                }
+
+                // Do not display the item if there is no 'text' property
+                if (typeof data.text === 'undefined') {
+                  return null;
+                }
+
+                /*tmp=select2_data.filter(function (el) {
+                    //console.log(el.context);
+                  if(el.context)return el.context.filter(ctx => ctx.includes($.trim(params.term))).length>0;
+                  return false;
+                });
+                return tmp;*/
+                //console.log(tmp);
+
+                // `params.term` should be the term that is used for searching
+                // `data.text` is the text that is displayed for the data object
+                if (data.text.toLowerCase().indexOf($.trim(params.term.toLowerCase())) > -1) {
+                  modifiedData = $.extend({}, data, true);
+                  //modifiedData.text += ' (matched)';
+
+                  // You can return modified objects from here
+                  // This includes matching the `children` how you want in nested data sets
+                  //console.log(modifiedData);
+                }
+                if(modifiedData){
+                    return modifiedData;
+                }
+
+                // Filtered results based on the context
+                //console.log(data.context);
+                if (data.context.filter(ctx => ctx.toLowerCase().includes($.trim(params.term.toLowerCase()))).length>0){
+                    var modifiedData;
+                //console.log(data.context);
+                  modifiedData = $.extend({}, data, true);
+                  //modifiedData.text += ' (matched)';
+
+                  // You can return modified objects from here
+                  // This includes matching the `children` how you want in nested data sets
+                  //console.log(modifiedData);
+                }
+                if(modifiedData){
+                    return modifiedData;
+                }
+
+                // Return `null` if the term should not be displayed
+                return null;
+              }
+        }).data().select2.$container.addClass("search");
+        $(".select2-selection").append("span").text("Click here to search for a process");
+    });
+    //attach search box listener
+    $("#search").on("select2:selecting", function(e) {
+        //console.log(e.params.args.data.text);
+        var paths = searchTree(root,e.params.args.data.text,[]);
+        if(typeof(paths) !== "undefined"){
+            openPaths(paths);
+        }
+        else{
+            //alert(e.object.text+" not found!");
+        }
+    })
+
+    d3.select(self.frameElement).style("height", toString(height)+"px");
+
+    function update(source) {
+        // Compute the new tree layout.
+        var nodes = tree.nodes(root).reverse(),
+        links = tree.links(nodes);
+
+        // Normalize for fixed-depth.
+        nodes.forEach(function(d) { d.y = d.depth * 120; });
+
+        // Update the nodesâ€¦
+        var node = svg.selectAll("g.node")
+            .data(nodes, function(d) { return d.id || (d.id = ++i); });
+
+        // Enter any new nodes at the parent's previous position.
+        var nodeEnter = node.enter().append("g")
+            .attr("class", "node")
+        .attr("transform", function(d) { return "translate(" + source.y0 + "," + source.x0 + ")"; })
+        .on("click", click)
+         .on('mouseover', function (d, i) {
+                var all="<p>Process details: ";
+                var new_details="";
+                if(d.details.trim("<br/>")!=""){
+                    d.details.trim("<br/>").split("<br/>").forEach((element) => {if(element)new_details=new_details+"<li><p>"+element+"</p></li>"});
+                }
+                if(new_details!=""){
+                    new_details="</p><ul>"+new_details+"</ul>"
+                }else{
+                    new_details="None</p>"
+                }
+                all=all+new_details+"<p>Context:";
+                var new_context=""
+                if(d.context.length>0){
+                    d.context.forEach((element) => {if(element)new_context=new_context+"<tr><td><p>"+element.trim("<br/>")+"</p></td></tr>"});
+                }
+                if(new_context!=""){
+                    new_context="</p><table class='table table-hover table-responsive table-sm'>"+new_context+"</table>"
+                }else{
+                    new_context="None</p>"
+                }
+                all=all+new_context;
+              div.html(all);
+              //Makes the new div appear on hover:
+              div.transition()
+                   .duration(50)
+                   .style("opacity", 1);
+         })
+         /*.on('mouseout', function (d, i) {
+              //Makes the new div disappear:
+              div.transition()
+                   .duration('50')
+                   .style("opacity", 0);
+         })*/;
+
+        nodeEnter.append("circle")
+        .attr("r", 1e-6)
+        .style("fill", function(d) { return d._children && d._children.length>0 ? "lightsteelblue" : "#fff"; });
+
+        nodeEnter.append("text")
+            .attr("x", function(d) { return d.children || d._children ? -10 : 10; })
+            .attr("dy", ".35em")
+            .attr("text-anchor", function(d) { return d.children || d._children ? "end" : "start"; })
+            .html(function(d) { return d.name; })
+            .style("fill-opacity", 1e-6);
+
+        // Transition nodes to their new position.
+        var nodeUpdate = node.transition()
+            .duration(duration)
+            .attr("transform", function(d) { return "translate(" + d.y + "," + d.x + ")"; });
+
+        nodeUpdate.select("circle")
+            .attr("r", 5.5)
+            .style("fill", function(d) {
+                if(d.class === "found"){
+                    if(d._children && d._children.length>0){
+                        return "#ffcccb";
+                    }
+                    else{
+                        return "#fff";
+                    }
+                }
+                else{
+                    if(d._children && d._children.length>0){
+                        return "lightsteelblue";
+                    }
+                    else{
+                        return "#fff";
+                    }
+                }
+            })
+            .style("stroke", function(d) {
+                if(d.class === "found"){
+                    return "#ff4136"; //red
+                }
+        });
+
+        nodeUpdate.select("text")
+            .style("fill-opacity", 1);
+
+        // Transition exiting nodes to the parent's new position.
+        var nodeExit = node.exit().transition()
+            .duration(duration)
+            .attr("transform", function(d) { return "translate(" + source.y + "," + source.x + ")"; })
+            .remove();
+
+        nodeExit.select("circle")
+            .attr("r", 1e-6);
+
+        nodeExit.select("text")
+            .style("fill-opacity", 1e-6);
+
+        // Update the linksâ€¦
+        var link = svg.selectAll("path.link")
+            .data(links, function(d) { return d.target.id; });
+
+        // Enter any new links at the parent's previous position.
+        link.enter().insert("path", "g")
+            .attr("class", "link")
+            .attr("d", function(d) {
+                var o = {x: source.x0, y: source.y0};
+                return diagonal({source: o, target: o});
+            });
+
+        // Transition links to their new position.
+        link.transition()
+            .duration(duration)
+            .attr("d", diagonal)
+            .style("stroke",function(d){
+                if(d.target.class==="found"){
+                    return "#ff4136";
+                }
+            });
+
+        // Transition exiting nodes to the parent's new position.
+        link.exit().transition()
+            .duration(duration)
+            .attr("d", function(d) {
+                var o = {x: source.x, y: source.y};
+                return diagonal({source: o, target: o});
+            })
+            .remove();
+
+        // Stash the old positions for transition.
+        nodes.forEach(function(d) {
+            d.x0 = d.x;
+            d.y0 = d.y;
+          });
+
+        height_ref=(20*nodes.length);
+        if(height_ref<height_limit){
+            height=height_limit;
+        }else{
+            height=height_ref;
+        }
+        tree =d3.layout.tree().size([height, width]);
+    }
+    function zoom() {
+          svg.style("stroke-width", 1.5 / d3.event.scale + "px");
+          svg.attr("transform", "translate(" + d3.event.translate + ")scale(" + d3.event.scale + ")");
+    }
+
+</script>
+
+</html>
