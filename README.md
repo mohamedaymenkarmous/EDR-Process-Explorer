@@ -23,6 +23,9 @@ The data being generated was modified and saved in this file [src/flare.json](sr
 
 This is just an example of 1 single process tree. But, in practice when you extract the process logs from a host between two different dates, you'll find several independant processes that you can include separately under the root node since the format of the [src/flare.json](src/flare.json) file should be in JSON format based on a JSON object (the parent structure should not be a list of objects). This is why, I adopted the structure of a parent "Independant process" that is the parent of multiple independant processes (1, 2, 3, etc).
 
+# Demo
+You can access find the example mentioned above [here in a live demo](https://jsfiddle.net/TheEmperors/vo7m1d6a/2/show/)
+
 # Features
 Following are the features that are implemented or in the roadmap of the implementation:
 - [x] The process tree should be in the proper format: JSON (originally implemented)
