@@ -46,5 +46,8 @@ Following are the features that are implemented or in the roadmap of the impleme
 - [ ] Add a feature that whitelists processes based on a search criteria (basically a command line or a regex of a command line) that will filter out any whitelisted process (and potentially its children as well).
 - [ ] Mark the selected items from the search bar so that the user will not select them twice by mistake because he is thinking that item is interesting and it was not selected (and colored inside the graph before).
 
+# How can I generate the [src/flare.json](src/flare.json) file from the raw logs?
+If your logs are based on Falcon Crowdstrike, you can extract the event logs in .csv format and then use this tool [github.com/mohamedaymenkarmous/Falcon-Crowdstrike-Events-Processor](https://github.com/mohamedaymenkarmous/Falcon-Crowdstrike-Events-Processor) to process those logs. That tool will create the [src/flare.json](src/flare.json) file perfectly in the required format to make this EDR process explorer work.
+
 # Support
 This is an open source for any person who wants to contribute. Feel free to suggest any feature either verbally by creating a Github Issue or technically with a Pull Request.
