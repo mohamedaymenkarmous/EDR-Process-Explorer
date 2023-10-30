@@ -8,8 +8,7 @@ This project is useful when:
 * The EDR platform doesn't show all the logged events in their graphical process explorer. The graphical interface of the EDR process explorer can be seen as amazing but unfortunately, not all the events are shown there.
 
 # Setup
-The web page can work only inside a web service. You can install any web service you like and then you need to place the content of the `src` directorry inside the `www` directory.
-If you don't want to install anything, you can setup the web service in python using the following command:
+The web page can work only inside a web service. You need to setup the web service in python using the following command:
 ```python
 python3 -m http.server
 ```
