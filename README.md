@@ -10,6 +10,8 @@ This project is useful when:
 # Setup
 The web page can work only inside a web service. You need to setup the web service in python using the following command:
 ```python
+cd ~/Documents
+git clone https://github.com/mohamedaymenkarmous/EDR-Process-Explorer
 python3 -m http.server
 ```
 The best way to make this project work properly is to use it locally. This is because the process execution logs can be voluminous. The web page will load the process tree located in the `src/flare.json` file. If your internet connection is slow, it'll not be practical to upload that JSON file to a remote server and then reload the web page and wait for a while until that JSON file is loaded and the web page is rendered.
