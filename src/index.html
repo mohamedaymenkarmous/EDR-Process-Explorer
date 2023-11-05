@@ -51,6 +51,14 @@
     .select2-selection__rendered{
     display: none!important;
     }
+    body .select2-container.search{
+    display: inline!important;
+    }
+
+    body .search .select2-selection--single{
+    width: 100%;
+    height: 100%;
+    }
 
 /*body .search .select2-selection--single {
     height: 100%;
@@ -80,7 +88,17 @@ This is the old version of Select2 that is limited
 
 
 <!-- This will be attached to select2, only static element on the page -->
-<div id="search"></div>
+<div class="_container_">
+  <div class="row">
+    <div class="col-10 pr-0">
+      <div id="search"></div>
+    </div>
+    <div class="col pl-0 pr-0">
+      <button id="show-security-detections" type="button" class="btn btn-danger p-1">Show Security Detections</button>
+    </div>
+  </div>
+</div>
+
 <!--<button id="Reset">RESET</button>-->
 <div class="details"><p>Process details: None</p><p>Context:None</p></div>
 
@@ -105,30 +123,31 @@ This is the old version of Select2 that is limited
 }*/
 
     //basically a way to get the path to an object
-    function searchTree(obj,search,path){
-        //console.log(search);
-        if(obj.details === search || obj.details === search){ //if search is found return, add the object to the path and return it
+    function searchTree(obj,search,searchType='equals'){
+        var result=[];
+        //console.log(searchType,search,obj);
+        if((searchType=='equals' && obj.details === search) || (searchType=='contains' && obj.details.includes(search))){
             //console.log(obj);
             //console.log(recursive_largest_children_parent(obj));
-            path.push(obj);
-            return path;
+            result.push(obj);
         }
-        else if(obj.children || obj._children){ //if children are collapsed d3 object will have them instantiated as _children
+        if(obj.children || obj._children){ //if children are collapsed d3 object will have them instantiated as _children
             var children = (obj.children) ? obj.children : obj._children;
             for(var i=0;i<children.length;i++){
-                path.push(obj);// we assume this path is the right one
-                var found = searchTree(children[i],search,path);
-                if(found){// we were right, this should return the bubbled-up path from the first if statement
-                    return found;
-                }
-                else{//we were wrong, remove this parent from the path and continue iterating
-                    path.pop();
+                found = searchTree(children[i],search,searchType);
+                if(found && found.length>0){
+                    if(found.find(o => o.id == obj.id)){}else{
+                        found.push(obj);
+                    }
+                    for(var m=0;m<found.length;m++){
+                        if(result.includes(found[m])){}else{
+                            result.push(found[m]);
+                        }
+                    }
                 }
             }
         }
-        else{//not the right object, return false so it will continue to iterate in the loop
-            return false;
-        }
+        return result;
     }
 
     function extract_select2_data(node,leaves,index){
@@ -181,6 +200,8 @@ This is the old version of Select2 that is limited
         .append("g")
         .attr("transform", "translate(0,0)");
         //.attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+        d3.select("body svg").append("defs").append("pattern").attr("id","image-collapsed").attr("x","0%").attr("y","0%").attr("width","100%").attr("height","100%").attr("viewBox","0 0 25 25").append("image").attr("x","0%").attr("y","0%").attr("width","25").attr("height","25").attr("xlink:href","alert-collapsed.png")
+        d3.select("body svg").append("defs").append("pattern").attr("id","image-expanded").attr("x","0%").attr("y","0%").attr("width","100%").attr("height","100%").attr("viewBox","0 0 25 25").append("image").attr("x","0%").attr("y","0%").attr("width","25").attr("height","25").attr("xlink:href","alert-expanded.png")
 
     /*
     It's a little bit difficult to control the reset zoom button
@@ -331,8 +352,8 @@ This is the old version of Select2 that is limited
     });
     //attach search box listener
     $("#search").on("select2:selecting", function(e) {
-        //console.log(e.params.args.data.text);
-        var paths = searchTree(root,e.params.args.data.text,[]);
+        console.log(e.params.args.data.text);
+        var paths = searchTree(root,e.params.args.data.text,'equals');
         if(typeof(paths) !== "undefined"){
             openPaths(paths);
         }
@@ -416,18 +437,34 @@ This is the old version of Select2 that is limited
             .style("fill", function(d) {
                 if(d.class === "found"){
                     if(d._children && d._children.length>0){
-                        return "#ffcccb";
+                        if(d.details.includes("Security Detection")){
+                            return "url(#image-collapsed)";
+                        }else{
+                            return "#ffcccb";
+                        }
                     }
                     else{
-                        return "#fff";
+                        if(d.details.includes("Security Detection")){
+                            return "url(#image-expanded)";
+                        }else{
+                            return "#fff";
+                        }
                     }
                 }
                 else{
                     if(d._children && d._children.length>0){
-                        return "lightsteelblue";
+                        if(d.details.includes("Security Detection")){
+                            return "url(#image-collapsed)";
+                        }else{
+                            return "lightsteelblue";
+                        }
                     }
                     else{
-                        return "#fff";
+                        if(d.details.includes("Security Detection")){
+                            return "url(#image-expanded)";
+                        }else{
+                            return "#fff";
+                        }
                     }
                 }
             })
@@ -501,6 +538,19 @@ This is the old version of Select2 that is limited
           svg.style("stroke-width", 1.5 / d3.event.scale + "px");
           svg.attr("transform", "translate(" + d3.event.translate + ")scale(" + d3.event.scale + ")");
     }
+
+
+    $("#show-security-detections").click(function(e) {
+        //console.log(e.params.args.data.text);
+        var paths = searchTree(root,"Security Detection",'contains');
+        console.log(paths);
+        if(typeof(paths) !== "undefined"){
+            openPaths(paths);
+        }
+        else{
+            //alert(e.object.text+" not found!");
+        }
+    });
 
 </script>
 
